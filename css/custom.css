@@ -1,0 +1,33 @@
+
+
+ /*
+ FLEXBOX
+ */
+ .flex {
+    display:flex;
+  }
+  
+  .flex.fdc {
+    flex-direction: column;
+  }
+  
+  .flex.fdr {
+    flex-direction: row;
+  }
+  
+  .flex.jcc {
+    justify-content: center;
+  }
+  
+  .flex.jcsbt {
+    justify-content: space-between;
+  }
+  
+  .flex.aic {
+    align-items: center;
+  } 
+  
+   /*
+   END FLEXBOX
+   */
+  

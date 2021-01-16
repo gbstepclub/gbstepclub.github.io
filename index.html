@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Greenbelt Step Club</title>
+    <meta name="description" content="">
+     <!-- Tell browser that the website is optimized for the phone -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/custom.css"/>
+    
+     <!-- Material Icons -->
+     <link href="css/local-gstatic.css" rel="stylesheet">
+  </head>
+
+  <body class="white">
+    <nav class="navbar">
+        <div class="nav-wrapper green darken-3">
+            <a href="#" class="brand-logo center">Greenbelt Step Club</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="active"><a href="index.html">Home</a></li>
+          </ul>
+            <!-- this makes the navbar slide out for the phone -->
+          <a href="#" data-target="slide-out" class="sidenav-trigger button-collapse right"><i class="material-icons black-text">menu</i></a>
+        </div>
+      </nav>
+    
+       <!-- this will appear on the phone navbar -->
+      <ul id="slide-out" class="sidenav">
+        <li class="active"><a href="index.html">Home</a></li>
+      </ul>
+    
+      <main class="white">
+    
+       <div class="section valign-wrapper">
+        <table class="row valign">
+          <tr>
+            <td>Day</td>
+            <td>Time</td> 
+            <td>Fellowship</td> 
+            <td>Format</td>
+            <td>Closed Meeting?</td>  
+          </tr>
+
+          <tbody id="meeting-schedule">
+            
+          </tbody>
+        </table>
+        </div>
+    
+      </main>
+    
+      <footer class="page-footer  green darken-3">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text"></h5>
+              <p class="grey-text text-lighten-4"></p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+   
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript">
+
+
+// it is too much trouble to  manually create html tables. just define them in javascript and let jquery code for you
+class Day {
+    constructor(name, list) {
+        this.name = name; // it is too much trouble to manually type the day each time a Meeting class is created. add it once here. 
+        this.list = list;
+    }
+}
+
+class Meeting {
+    constructor(time, fellowShip, format, isClosed) {
+        this.time = time;
+        this.fellowShip = fellowShip;
+        this.format = format;
+        this.isClosed = isClosed;
+    }
+}
+
+let monday = new Day("Monday", [
+    new Meeting("6:45 AM", "AA", "Slogans", "Yes"),
+    new Meeting("12:00 PM", "AA", "Big Book", "Yes"),
+]);
+
+let tuesday = new Day("Tuesday", [
+  new Meeting("6:45 AM", "AA", "Tools of Recovery", "Yes"),
+]);
+
+let wednesday = new Day("Wednesday", [
+  new Meeting("6:45 AM", "AA", "Big Book", "Yes"),
+]);
+
+let thursday = new Day("Thursday", [
+  new Meeting("6:45 AM", "AA", "Steps & Traditions", "Yes"),
+]);
+
+let friday = new Day("Friday", [
+  new Meeting("6:45 AM", "AA", "How It Works", "Yes"),
+]);
+
+let saturday = new Day("Saturday", [
+  new Meeting("6:45 AM", "AA", "Necessary for Life", "Yes"),
+]);
+
+let sunday = new Day("Sunday", [
+  new Meeting("6:45 AM", "AA", "Came to Believe", "Yes"),
+  new Meeting("12:00 PM", "AA", "AA Literature", "Yes"),
+]);
+
+function createRowsForDay(day) {
+    rows = "";
+    $.each(day.list, function(index, meeting) {
+    rows +=  `
+        <tr class="${meeting.fellowShip} ${day.name}">
+            <td>${day.name}</td>
+            <td>${meeting.time}</td>
+            <td>${meeting.fellowShip}</td>
+            <td>${meeting.format}</td>
+            <td>${meeting.isClosed}</td>
+        </tr>
+        `
+    });
+
+   return rows;
+}
+
+$(document).ready(function(){
+    $("#meeting-schedule").append(createRowsForDay(monday));
+    $("#meeting-schedule").append(createRowsForDay(tuesday));
+    $("#meeting-schedule").append(createRowsForDay(wednesday));
+    $("#meeting-schedule").append(createRowsForDay(thursday));
+    $("#meeting-schedule").append(createRowsForDay(friday));
+    $("#meeting-schedule").append(createRowsForDay(saturday));
+    $("#meeting-schedule").append(createRowsForDay(sunday));
+});
+    </script>
+  </body>
+</html>
