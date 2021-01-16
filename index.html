@@ -18,7 +18,7 @@
   <body class="white">
     <nav class="navbar">
         <div class="nav-wrapper green darken-3">
-            <a href="#" class="brand-logo center">Greenbelt Step Club Meeting List</a>
+            <a href="#" class="brand-logo center" id="navbar-title">Greenbelt Step Club</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li class="active"><a href="index.html">Home</a></li>
           </ul>
@@ -35,7 +35,7 @@
       <main class="white">
     
        <div class="section">
-        <table class="">
+        <table class="" style="width:100vw;">
           <tr>
             <td>            
               <!-- https://materializecss.com/dropdown.html-->
@@ -54,7 +54,7 @@
             <td>Time</td> 
             <td>
               <!-- https://materializecss.com/dropdown.html-->
-              <a class="dropdown-trigger btn light-blue darken-4" href="#" data-target="dd_fellowship">Fellowship</a>
+              <a class="dropdown-trigger btn light-blue darken-4" href="#" data-target="dd_fellowship">Type</a>
               <ul id="dd_fellowship" class="dropdown-content">
               <li class="active"><a href="#!">All</a></li>
               <li><a href="#!">AA</a></li>
@@ -147,7 +147,7 @@ function createRowsForDay(day) {
     $.each(day.list, function(index, meeting) {
     rows +=  `
         <tr class="${meeting.fellowShip} ${day.name}">
-            <td>${day.name}</td>
+            <td>${day.name.substr(0,3)}</td>
             <td>${meeting.time}</td>
             <td>${meeting.fellowShip}</td>
             <td>${meeting.format}</td>
@@ -163,7 +163,7 @@ function createRowsForDay(day) {
 $(document).ready(function(){
 
   //      https://materializecss.com/dropdown.html  
-  $('.dropdown-trigger').dropdown();
+  M.AutoInit();
 
   $("ul.dropdown-content li").on("click",function() {
     let parent = $(this).parent();

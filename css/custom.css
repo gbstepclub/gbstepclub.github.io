@@ -30,4 +30,13 @@
    /*
    END FLEXBOX
    */
-  
+
+@media only screen and (max-width: 540px) {
+    table {
+        font-size:4vw !important;
+    }
+
+    #navbar-title {
+        font-size:5vw !important;
+    }
+}
