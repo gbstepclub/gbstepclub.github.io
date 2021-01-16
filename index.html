@@ -175,7 +175,8 @@ $(document).ready(function(){
 
   //      https://materializecss.com/dropdown.html  
   M.AutoInit();
-
+  $('.sidenav').sidenav();
+  
   // the point of this is to use the "active" class to determine what needs to be displayed. the table header has two dropdowns. when a dropdown item is selected, 
   // it is marked as active, and the text in that dropdown is compared to  the table rows. if a table row has a matching class, it gets displayed. 
   $("ul.dropdown-content li").on("click",function() {
