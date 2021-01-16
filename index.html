@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Greenbelt Step Club</title>
+    <title>Greenbelt Step Club, Inc</title>
     <meta name="description" content="">
      <!-- Tell browser that the website is optimized for the phone -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,9 @@
         <div class="nav-wrapper green darken-3">
             <a href="#" class="brand-logo center" id="navbar-title">Greenbelt Step Club</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li class="active"><a href="index.html">Home</a></li>
+              <li class="active"><a href="index.html">Home</a></li>
+              <li class=""><a href="index.html">About</a></li>
+              <li class=""><a href="index.html">Contact</a></li>
           </ul>
             <!-- this makes the navbar slide out for the phone -->
           <a href="#" data-target="slide-out" class="sidenav-trigger button-collapse right"><i class="material-icons black-text">menu</i></a>
@@ -30,6 +32,8 @@
        <!-- this will appear on the phone navbar -->
       <ul id="slide-out" class="sidenav">
         <li class="active"><a href="index.html">Home</a></li>
+        <li class=""><a href="index.html">About</a></li>
+        <li class=""><a href="index.html">Contact</a></li>
       </ul>
     
       <main class="white">
@@ -82,7 +86,9 @@
             </div>
             <div class="col l4 offset-l2 s12">
               <ul>
-                <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+                <li><a href="index.html" class="white-text"></a></li>
+                <li><a href="index.html" class="white-text"></a></li>
+                <li><a href="index.html" class="white-text"></a></li>
               </ul>
             </div>
           </div>
@@ -112,34 +118,39 @@ class Meeting {
     }
 }
 
+// warning: the fellow ship type (AA, NA, ect) must be the same here as it is in the dropdown bar in the table header. the javascript is doing string comparisons.
+// be sure to use a variable rather than re-typing "AA" or the like when initializing Day classes. That way if something is wrong you only have to check two places. 
+let FELLOWSHIP_AA = "AA";
+let FELLOWSHIP_NA = "NA";
+
 let monday = new Day("Monday", [
-    new Meeting("6:45 AM", "AA", "Slogans", "Yes"),
-    new Meeting("12:00 PM", "AA", "Big Book", "Yes"),
+    new Meeting("6:45 AM", FELLOWSHIP_AA, "Slogans", "Yes"),
+    new Meeting("12:00 PM", FELLOWSHIP_AA, "Big Book", "Yes"),
 ]);
 
 let tuesday = new Day("Tuesday", [
-  new Meeting("6:45 AM", "AA", "Tools of Recovery", "Yes"),
+  new Meeting("6:45 AM", FELLOWSHIP_AA, "Tools of Recovery", "Yes"),
 ]);
 
 let wednesday = new Day("Wednesday", [
-  new Meeting("6:45 AM", "AA", "Big Book", "Yes"),
+  new Meeting("6:45 AM", FELLOWSHIP_AA, "Big Book", "Yes"),
 ]);
 
 let thursday = new Day("Thursday", [
-  new Meeting("6:45 AM", "AA", "Steps & Traditions", "Yes"),
+  new Meeting("6:45 AM", FELLOWSHIP_AA, "Steps & Traditions", "Yes"),
 ]);
 
 let friday = new Day("Friday", [
-  new Meeting("6:45 AM", "AA", "How It Works", "Yes"),
+  new Meeting("6:45 AM", FELLOWSHIP_AA, "How It Works", "Yes"),
 ]);
 
 let saturday = new Day("Saturday", [
-  new Meeting("6:45 AM", "AA", "Necessary for Life", "Yes"),
+  new Meeting("6:45 AM", FELLOWSHIP_AA, "Necessary for Life", "Yes"),
 ]);
 
 let sunday = new Day("Sunday", [
-  new Meeting("6:45 AM", "AA", "Came to Believe", "Yes"),
-  new Meeting("12:00 PM", "AA", "AA Literature", "Yes"),
+  new Meeting("6:45 AM", FELLOWSHIP_AA, "Came to Believe", "Yes"),
+  new Meeting("12:00 PM", FELLOWSHIP_AA, "AA Literature", "Yes"),
 ]);
 
 function createRowsForDay(day) {
@@ -165,6 +176,8 @@ $(document).ready(function(){
   //      https://materializecss.com/dropdown.html  
   M.AutoInit();
 
+  // the point of this is to use the "active" class to determine what needs to be displayed. the table header has two dropdowns. when a dropdown item is selected, 
+  // it is marked as active, and the text in that dropdown is compared to  the table rows. if a table row has a matching class, it gets displayed. 
   $("ul.dropdown-content li").on("click",function() {
     let parent = $(this).parent();
     let children = parent.children();
@@ -173,7 +186,6 @@ $(document).ready(function(){
     });
 
     $(this).toggleClass("active");
-    
     
     let day = $("#dd_day");
     let fellowship = $("#dd_fellowship");
@@ -199,7 +211,6 @@ $(document).ready(function(){
     });
 
     $.each(table, (idx, elem) => {
-      console.log($(elem).text());
       if (activeDay != "All" && !$(elem).hasClass(activeDay)) {
         $(elem).hide();
       }

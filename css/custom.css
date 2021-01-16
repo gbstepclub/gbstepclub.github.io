@@ -31,6 +31,16 @@
    END FLEXBOX
    */
 
+   body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
 @media only screen and (max-width: 540px) {
     table {
         font-size:4vw !important;
