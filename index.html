@@ -18,7 +18,7 @@
   <body class="white">
     <nav class="navbar">
         <div class="nav-wrapper green darken-3">
-            <a href="#" class="brand-logo center">Greenbelt Step Club</a>
+            <a href="#" class="brand-logo center">Greenbelt Step Club Meeting List</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li class="active"><a href="index.html">Home</a></li>
           </ul>
@@ -34,20 +34,50 @@
     
       <main class="white">
     
-       <div class="section valign-wrapper">
-        <table class="row valign">
-          <tr>
-            <td>Day</td>
-            <td>Time</td> 
-            <td>Fellowship</td> 
-            <td>Format</td>
-            <td>Closed Meeting?</td>  
-          </tr>
+       <div class="section flex fdc">
+         <div class="flex fdr row">
 
-          <tbody id="meeting-schedule">
-            
-          </tbody>
-        </table>
+<div>
+            <!-- https://materializecss.com/dropdown.html-->
+<a class="dropdown-trigger btn light-blue darken-4" href="#" data-target="dd_day">Select Day</a>
+<ul id="dd_day" class="dropdown-content">
+  <li class="active"><a href="#!">All</a></li>
+  <li><a href="#!">Monday</a></li>
+  <li><a href="#!">Tuesday</a></li>
+  <li><a href="#!">Wednesday</a></li>
+  <li><a href="#!">Thursday</a></li>
+  <li><a href="#!">Friday</a></li>
+  <li><a href="#!">Saturday</a></li>
+  <li><a href="#!">Sunday</a></li>
+</ul>
+</div>
+
+<div>
+  <!-- https://materializecss.com/dropdown.html-->
+<a class="dropdown-trigger btn light-blue darken-4" href="#" data-target="dd_fellowship">Select Fellowship</a>
+<ul id="dd_fellowship" class="dropdown-content">
+<li class="active"><a href="#!">All</a></li>
+<li><a href="#!">AA</a></li>
+<li><a href="#!">NA</a></li>
+</ul>
+</div>
+         </div>
+
+        <div>
+          <table class="">
+            <tr>
+              <td>Day</td>
+              <td>Time</td> 
+              <td>Fellowship</td> 
+              <td>Format</td>
+              <td>Closed Meeting?</td>  
+            </tr>
+  
+            <tbody id="meeting-schedule">
+              
+            </tbody>
+          </table>
+        </div>
         </div>
     
       </main>
@@ -138,7 +168,57 @@ function createRowsForDay(day) {
    return rows;
 }
 
+//     https://learn.jquery.com/using-jquery-core/document-ready/
 $(document).ready(function(){
+
+  //      https://materializecss.com/dropdown.html  
+  $('.dropdown-trigger').dropdown();
+
+  $("ul.dropdown-content li").on("click",function() {
+    let parent = $(this).parent();
+    let children = parent.children();
+    $.each(children, function(index, child) {
+      $(this).removeClass("active");
+    });
+
+    $(this).toggleClass("active");
+    
+    
+    let day = $("#dd_day");
+    let fellowship = $("#dd_fellowship");
+    let table = $("#meeting-schedule").children();
+
+    let activeDay = "All";
+    let activeFellowship = "All";
+    $.each(day.children(), (idx, elem) => {
+      if ($(elem).hasClass("active")){
+        activeDay = $(this).text();
+      }
+    });
+
+    $.each(fellowship.children(), (idx, elem) => {
+      if ($(elem).hasClass("active")){
+        activeFellowship = $(this).text();
+      }
+    });
+
+    // show them all. makes the logic easier
+    $.each(table, (idx, elem) => {
+      $(elem).show();
+    });
+
+    $.each(table, (idx, elem) => {
+      console.log($(elem).text());
+      if (activeDay != "All" && !$(elem).hasClass(activeDay)) {
+        $(elem).hide();
+      }
+
+      if (activeFellowship != "All" && !$(elem).hasClass(activeFellowship)) {
+        $(elem).hide();
+      }
+    });
+  });
+
     $("#meeting-schedule").append(createRowsForDay(monday));
     $("#meeting-schedule").append(createRowsForDay(tuesday));
     $("#meeting-schedule").append(createRowsForDay(wednesday));
