@@ -39,7 +39,7 @@
       <main class="white">
     
        <div class="section">
-        <table class="" style="width:100vw;">
+        <table class="resposive-table" style="width:100vw;">
           <tr>
             <td>            
               <!-- https://materializecss.com/dropdown.html-->
@@ -62,11 +62,16 @@
               <ul id="dd_fellowship" class="dropdown-content">
               <li class="active"><a href="#!">All</a></li>
               <li><a href="#!">AA</a></li>
+              <li><a href="#!">ACA</a></li>
+              <li><a href="#!">Al-Anon</a></li>
+              <li><a href="#!">CDA</a></li>
+              <li><a href="#!">DRA</a></li>
               <li><a href="#!">NA</a></li>
+              <li><a href="#!">SAA</a></li>
               </ul>
             </td> 
-            <td>Format</td>
-            <td>Closed Meeting?</td>  
+            <td>Info</td>
+            <td></td>
           </tr>
 
           <tbody id="meeting-schedule">
@@ -110,9 +115,9 @@ class Day {
 }
 
 class Meeting {
-    constructor(time, fellowShip, format, isClosed) {
+    constructor(time, fellowship, format, isClosed) {
         this.time = time;
-        this.fellowShip = fellowShip;
+        this.fellowship = fellowship;
         this.format = format;
         this.isClosed = isClosed;
     }
@@ -121,48 +126,268 @@ class Meeting {
 // warning: the fellow ship type (AA, NA, ect) must be the same here as it is in the dropdown bar in the table header. the javascript is doing string comparisons.
 // be sure to use a variable rather than re-typing "AA" or the like when initializing Day classes. That way if something is wrong you only have to check two places. 
 let FELLOWSHIP_AA = "AA";
+let FELLOWSHIP_ACA = "ACA";
+let FELLOWSHIP_AlANON = "Al-Anon";
+let FELLOWSHIP_CDA = "CDA";
+let FELLOWSHIP_DRA = "DRA";
 let FELLOWSHIP_NA = "NA";
+let FELLOWSHIP_SAA = "SAA";
+
+
+let sunshineSobriety_meetingId = "919 226 699";
+let sunshineSobriety_meetingPassword = "061035";
+let sunshineSobriety_meetingLink = "https://zoom.us/j/919226699?pwd=WGI2VEpSb1VnSUtEUnF5azNFSkZ5QT09";
+
+function SunshineSobrietyMeeting(meetingFormat)
+{
+  return {
+      time: "6:45 AM",
+      fellowship: FELLOWSHIP_AA,
+      format: meetingFormat,
+      isClosed: true,
+      isVirtual: true,
+      isInPerson: false,
+      meetingId: sunshineSobriety_meetingId,
+      password: sunshineSobriety_meetingPassword,
+      link: sunshineSobriety_meetingLink,
+    }
+}
+
 
 let monday = new Day("Monday", [
-    new Meeting("6:45 AM", FELLOWSHIP_AA, "Slogans", "Yes"),
-    new Meeting("12:00 PM", FELLOWSHIP_AA, "Big Book", "Yes"),
+  SunshineSobrietyMeeting("Slogans"),
+  {
+    time: "10:00 AM",
+    fellowship: FELLOWSHIP_AA,
+    format: "As  Bill Sees It (last Mon. Sponsorhip)",
+    isClosed: true,
+  },
+  {
+    time: "12:00 PM",
+    fellowship: FELLOWSHIP_AA,
+    format: "Big Book",
+    isClosed: true,
+  },
+  {
+    time: "4:30 PM",
+    fellowship: FELLOWSHIP_AA,
+    format: "Living Sober",
+    isClosed: true,
+  },
+  {
+    time: "6:30 PM",
+    fellowship: FELLOWSHIP_DRA,
+    format: "Monday Night & We're Alright",
+    isClosed: false,
+    isInPerson: true,
+  },
 ]);
 
 let tuesday = new Day("Tuesday", [
-  new Meeting("6:45 AM", FELLOWSHIP_AA, "Tools of Recovery", "Yes"),
+  SunshineSobrietyMeeting("Tools of Recovery"),
+  {
+    time: "12:00 PM",
+    fellowship: FELLOWSHIP_CDA,
+    format: "Cellar Dwellers",
+  },
+  {
+    time: "4:30 PM",
+    fellowship: FELLOWSHIP_AA,
+    format: "Daily Reflections",
+    isClosed: true
+  },
+  {
+    time: "7:30 PM",
+    fellowship: FELLOWSHIP_NA, 
+    format: "A.W.O.L.",
+  },
 ]);
 
 let wednesday = new Day("Wednesday", [
-  new Meeting("6:45 AM", FELLOWSHIP_AA, "Big Book", "Yes"),
+  SunshineSobrietyMeeting("Big Book"),
+  {
+    time: "10:00 AM",
+    fellowship: FELLOWSHIP_AA,
+    format: "8th and 9th Steps (last Wed. AA Legacy)",
+    isClosed: true,
+  },
+  {
+    time: "12:00 PM",
+    fellowship: FELLOWSHIP_NA, 
+    format: "Just For Today",
+  },
+  {
+    time: "4:30 PM",
+    fellowship: FELLOWSHIP_AA,
+    format: "Experience, Strength, and Hope",
+    isClosed: true,
+  },
+  {
+    time: "7:00 PM",
+    fellowship: FELLOWSHIP_AA,
+    format: "Steps & Traditions Study Group",
+  },
 ]);
 
 let thursday = new Day("Thursday", [
-  new Meeting("6:45 AM", FELLOWSHIP_AA, "Steps & Traditions", "Yes"),
+  SunshineSobrietyMeeting("Steps & Traditions"),
+  {
+    time: "12:00 PM",
+    fellowship: FELLOWSHIP_NA, 
+    format: "Not High at Noon",
+  },
+  {
+    time: "4:30 PM",
+    fellowship: FELLOWSHIP_AA,
+    format: "Grapevine",
+  },
+  {
+    time: "6:30 PM",
+    fellowship: FELLOWSHIP_AlANON,
+    format: "Early Bird Serenity",
+  },
+  {
+    time: "8:00 PM",
+    fellowship: FELLOWSHIP_SAA,
+    format: "Recovery in Action",
+    isClosed: true
+  },
 ]);
 
 let friday = new Day("Friday", [
-  new Meeting("6:45 AM", FELLOWSHIP_AA, "How It Works", "Yes"),
+  SunshineSobrietyMeeting("How It Works"),
+  {
+    time: "10:00 AM",
+    fellowship: FELLOWSHIP_AA,
+    format: "Acceptance/Beginners",
+    isClosed: true,
+  },
+  {
+    time: "12:00 PM",
+    fellowship: FELLOWSHIP_AA,
+    format: "Acceptance",
+    isClosed: true,
+  },
+  {
+    time: "4:30 PM",
+    fellowship: FELLOWSHIP_AA,
+    format: "AA Literature",
+    isClosed: true,
+  },
+  {
+    time: "7:00 PM",
+    fellowship: FELLOWSHIP_CDA,
+    format: "Friday Happy Hour",
+  },
 ]);
 
 let saturday = new Day("Saturday", [
-  new Meeting("6:45 AM", FELLOWSHIP_AA, "Necessary for Life", "Yes"),
+  SunshineSobrietyMeeting("Necessary for Life"),
+  {
+    time: "8:30 AM",
+    fellowship: FELLOWSHIP_AA,
+    format: "6th and 7th Steps",
+    isClosed: true,
+  },
+  {
+    time: "10:00 AM",
+    fellowship: FELLOWSHIP_AA,
+    format: "Beginners Step 123 Meeting",
+    isClosed: true,
+  },
+  {
+    time: "12:00 PM",
+    fellowship: FELLOWSHIP_ACA,
+    format: "As We Grow",
+    isClosed: true,
+  },
+  {
+    time: "2:00 PM",
+    fellowship: FELLOWSHIP_ACA,
+    format: "ACA Workbook Study (2nd & 4th Saturdays",
+    isClosed: true,
+  },
+  {
+    time: "7:30 PM",
+    fellowship: FELLOWSHIP_AA,
+    format: "Self Examination, Meditation, and Prayer",
+  },
 ]);
 
 let sunday = new Day("Sunday", [
-  new Meeting("6:45 AM", FELLOWSHIP_AA, "Came to Believe", "Yes"),
-  new Meeting("12:00 PM", FELLOWSHIP_AA, "AA Literature", "Yes"),
+  SunshineSobrietyMeeting("Came to Believe"),
+  {
+    time: "10:30 AM",
+    fellowship: FELLOWSHIP_AA,
+    format: "Tools of Recovery",
+  },
+  {
+    time: "12:00 PM",
+    fellowship: FELLOWSHIP_AA,
+    format: "AA Literature",
+  },
+  {
+    time: "6:00 PM",
+    fellowship: FELLOWSHIP_CDA,
+    format: "Sunday Fun Bunch"
+  },
+  {
+    time: "8:00 PM",
+    fellowship: FELLOWSHIP_AA,
+    format: "Speaker Meeting",
+  },
 ]);
+
+function createMeetingInfo(meeting) {
+  infoList = [meeting.format];
+  if (meeting.isInPerson && meeting.isVirtual) {
+    infoList.push("Held in person & virtually");
+  } else if (meeting.isInPerson) {
+    infoList.push("Held in person");
+  } else if (meeting.isVirtual) {
+    infoList.push("Held virtually");
+  } else {
+    infoList.push("Status unknown");
+  }
+
+  if (meeting.isVirtual) {
+    infoList.push("Zoom Id: " + meeting.meetingId);
+    infoList.push("Password: " + meeting.password);
+    infoList.push(`<a href="${meeting.link}">Meeting Link</a>`);
+  }
+
+  var inner = $.map(infoList, x => 
+  `<div>
+   ${x}
+   </div>
+   `);
+
+   joined = inner.join(`
+   `);
+
+  return `
+  <div class="flex fdc">
+    ${joined}
+  </div>
+  `;
+}
 
 function createRowsForDay(day) {
     rows = "";
     $.each(day.list, function(index, meeting) {
+      let isClosed = "";
+      if (meeting.isClosed) {
+        isClosed = `(C)`;
+      } else {
+        isClosed = "(O)";
+      }
     rows +=  `
-        <tr class="${meeting.fellowShip} ${day.name}">
+        <tr class="${meeting.fellowship} ${day.name}">
             <td>${day.name.substr(0,3)}</td>
             <td>${meeting.time}</td>
-            <td>${meeting.fellowShip}</td>
-            <td>${meeting.format}</td>
-            <td>${meeting.isClosed}</td>
+            <td>${meeting.fellowship}</td>
+            <td>${createMeetingInfo(meeting)}</td>
+            <td>${isClosed}</td>
         </tr>
         `
     });
