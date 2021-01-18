@@ -50,3 +50,10 @@
         font-size:5vw !important;
     }
 }
+
+@media only screen and (max-width: 350px) {
+  td a.btn {
+    width: 15vw;
+    font-size:3.8vw;
+  }
+}
