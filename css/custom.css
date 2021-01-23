@@ -31,6 +31,11 @@
    END FLEXBOX
    */
 
+   .center-text {
+    word-wrap:break-word;
+    text-align:center;
+  }
+
    /* the following two rules make the footer stick to the bottom of the page*/
 body {
   display: flex;
@@ -47,7 +52,10 @@ a.sortable-table-row  {
   flex-direction: row;
   justify-content: center;
   align-items: center;
- 
+}
+
+#meeting-notice {
+  padding-bottom: 20px;
 }
 
 @media only screen and (max-width: 540px) {
