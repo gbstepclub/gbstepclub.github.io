@@ -58,6 +58,10 @@ a.sortable-table-row  {
   padding-bottom: 20px;
 }
 
+div.small-spacer {
+  width: 30px;
+}
+
 @media only screen and (max-width: 540px) {
   #meeting-table {
         font-size:4vw !important;

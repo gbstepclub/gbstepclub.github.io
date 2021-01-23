@@ -41,18 +41,62 @@
         <li class=""><a href="about.html">About</a></li>
       </ul>
     
+      <div id="legend-modal" class="modal">
+        <div class="modal-content">
+          <table>
+            <thead>
+              <h5 class="center-text">Legend</h5>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AA = Alcoholics Anonymous</td>
+                <td>Al-Anon = Friends and Family of Alcoholics</td>
+              </tr>
+              <tr>
+                <td>ACA = Adult Children of Alcoholics</td>
+                <td>CDA = Chemically Dependent Anonymous</td>
+              </tr>
+              <tr>
+                <td>DRA = Dual Recovery Anonymous</td>
+                <td>NA = Narcotics Anonymous</td>
+              </tr>
+              <tr>
+                <td>SAA = Sex Addicts Anonymous</td>
+                <td></td>
+              </tr>
+            </tbody>
+            
+            <tfoot>
+              <tr>
+                <td>
+                  (C) indicates closed meeting: Closed meetings are only for those persons who believe they have a problem in the area that a particular fellowship addresses
+                </td>
+              </tr>
+              <tr></tr>
+              <td>
+                (O) indicates open meeting: Open meetings are open to anyone with an interest in the particular fellowship
+              </td>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="modal-footer">
+          <a href="#!" class=" modal-close btn waves-effect waves-green green darken-3 text-accent-3">Close</a>
+        </div>
+      </div>
+
       <main class="white">
     
        <div class="section">
-         <div class="center-text" id="meeting-notice">
-          Schedule as of 3/13/2019. Meetings with "Status unknown" may or may not be active
-          <br>
-          Located at 143 Centerway, Greenbelt, MD 20770
-          <br>
-          Postal Address: PO Box 1084, Greenbelt, MD 20768-1084
-          <br>
-          <a href="https://www.google.com/maps/place/143+Centerway,+Greenbelt,+MD+20770,+USA/@39.0015997,-76.8778304,17z/data=!3m1!4b1!4m5!3m4!1s0x89b7c3cd8902a263:0x6a7e105fa5ed9955!8m2!3d39.0015997!4d-76.8756364">Directions</a>
+         <div class="center-text flex fdc aic" id="meeting-notice">
+            <h5>Meeting List as of 3/13/2019</h5>
+            <div class="flex fdr jcsbt">
+              <a class="modal-trigger" href="#legend-modal">Legend</a>
+              <div class="small-spacer"></div>
+              <a href="https://www.google.com/maps/place/143+Centerway,+Greenbelt,+MD+20770,+USA/@39.0015997,-76.8778304,17z/data=!3m1!4b1!4m5!3m4!1s0x89b7c3cd8902a263:0x6a7e105fa5ed9955!8m2!3d39.0015997!4d-76.8756364">Directions</a>
+          </div> 
          </div>
+
         <table id="meeting-table">
           <thead>
             <tr>
@@ -100,41 +144,7 @@
             
           </tbody>
         </table>
-        <table id="meeting-legend">
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td>AA = Alcoholics Anonymous</td>
-              <td>Al-Anon = Friends and Family of Alcoholics</td>
-            </tr>
-            <tr>
-              <td>ACA = Adult Children of Alcoholics</td>
-              <td>CDA = Chemically Dependent Anonymous</td>
-            </tr>
-            <tr>
-              <td>DRA = Dual Recovery Anonymous</td>
-              <td>NA = Narcotics Anonymous</td>
-            </tr>
-            <tr>
-              <td>SAA = Sex Addicts Anonymous</td>
-              <td></td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>
-                (C) indicates closed meeting: Closed meetings are only for those persons who believe they have a problem in the area that a particular fellowship addresses
-              </td>
-            </tr>
-            <tr></tr>
-            <td>
-              (O) indicates open meeting: Open meetings are open to anyone with an interest in the particular fellowship
-            </td>
-          </tfoot>
-        </table>
         </div>
-    
       </main>
     
       <footer class="page-footer  green darken-3">
