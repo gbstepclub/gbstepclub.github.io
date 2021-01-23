@@ -31,29 +31,35 @@
    END FLEXBOX
    */
 
-   body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+   /* the following two rules make the footer stick to the bottom of the page*/
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
+
+a.sortable-table-row  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+ 
+}
 
 @media only screen and (max-width: 540px) {
-    table {
+  #meeting-table {
         font-size:4vw !important;
     }
 
     #navbar-title {
         font-size:5vw !important;
     }
-}
 
-@media only screen and (max-width: 350px) {
-  td a.btn {
-    width: 15vw;
-    font-size:3.8vw;
-  }
+    a.sortable-table-row {
+      flex-wrap: wrap;
+    }
 }

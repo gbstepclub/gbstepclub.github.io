@@ -20,9 +20,9 @@
         <div class="nav-wrapper green darken-3">
             <a href="#" class="brand-logo center" id="navbar-title">Greenbelt Step Club</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li class="active"><a href="index.html">Home</a></li>
+              <li class="active"><a href="index.html">Meetings</a></li>
+              <li class=""><a href="index.html">Location</a></li>
               <li class=""><a href="index.html">About</a></li>
-              <li class=""><a href="index.html">Contact</a></li>
           </ul>
             <!-- this makes the navbar slide out for the phone -->
           <a href="#" data-target="slide-out" class="sidenav-trigger button-collapse right"><i class="material-icons black-text">menu</i></a>
@@ -31,48 +31,56 @@
     
        <!-- this will appear on the phone navbar -->
       <ul id="slide-out" class="sidenav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li class=""><a href="index.html">About</a></li>
-        <li class=""><a href="index.html">Contact</a></li>
+        <li class="active"><a href="index.html">Meetings</a></li>
+        <li class=""><a href="index.html">Location</a></li>
+        <li class=""><a href="index.html">ContAboutact</a></li>
       </ul>
     
       <main class="white">
     
        <div class="section">
-        <table class="">
-          <tr>
-            <td>            
-              <!-- https://materializecss.com/dropdown.html-->
-              <a class="dropdown-trigger btn light-blue darken-4" href="#" data-target="dd_day">Day</a>
-              <ul id="dd_day" class="dropdown-content">
+        <table id="meeting-table">
+          <thead>
+            <tr>
+              <td>            
+                <!-- https://materializecss.com/dropdown.html-->
+                <a class="sortable-table-row dropdown-trigger light-blue-text darken-4" href="#" data-target="dd_day">
+                  <div>Day</div>
+                  <i class="small material-icons">arrow_drop_down</i>
+                </a>
+                <ul id="dd_day" class="dropdown-content">
+                  <li class="active"><a href="#!">All</a></li>
+                  <li><a href="#!">Monday</a></li>
+                  <li><a href="#!">Tuesday</a></li>
+                  <li><a href="#!">Wednesday</a></li>
+                  <li><a href="#!">Thursday</a></li>
+                  <li><a href="#!">Friday</a></li>
+                  <li><a href="#!">Saturday</a></li>
+                  <li><a href="#!">Sunday</a></li>
+                </ul>
+              </td>
+              <td>Time</td> 
+              <td>
+                <!-- https://materializecss.com/dropdown.html-->
+                <a class="sortable-table-row  dropdown-trigger  light-blue-text darken-4" href="#" data-target="dd_fellowship">
+                  <div>Type</div>
+                  <i class="small material-icons">arrow_drop_down</i>
+                </a>
+                <ul id="dd_fellowship" class="dropdown-content">
                 <li class="active"><a href="#!">All</a></li>
-                <li><a href="#!">Monday</a></li>
-                <li><a href="#!">Tuesday</a></li>
-                <li><a href="#!">Wednesday</a></li>
-                <li><a href="#!">Thursday</a></li>
-                <li><a href="#!">Friday</a></li>
-                <li><a href="#!">Saturday</a></li>
-                <li><a href="#!">Sunday</a></li>
-              </ul>
-            </td>
-            <td>Time</td> 
-            <td>
-              <!-- https://materializecss.com/dropdown.html-->
-              <a class="dropdown-trigger btn light-blue darken-4" href="#" data-target="dd_fellowship">Type</a>
-              <ul id="dd_fellowship" class="dropdown-content">
-              <li class="active"><a href="#!">All</a></li>
-              <li><a href="#!">AA</a></li>
-              <li><a href="#!">ACA</a></li>
-              <li><a href="#!">Al-Anon</a></li>
-              <li><a href="#!">CDA</a></li>
-              <li><a href="#!">DRA</a></li>
-              <li><a href="#!">NA</a></li>
-              <li><a href="#!">SAA</a></li>
-              </ul>
-            </td> 
-            <td>Info</td>
-            <td></td>
-          </tr>
+                <li><a href="#!">AA</a></li>
+                <li><a href="#!">ACA</a></li>
+                <li><a href="#!">Al-Anon</a></li>
+                <li><a href="#!">CDA</a></li>
+                <li><a href="#!">DRA</a></li>
+                <li><a href="#!">NA</a></li>
+                <li><a href="#!">SAA</a></li>
+                </ul>
+              </td> 
+              <td>Info</td>
+              <td></td>
+            </tr>
+          </thead>
 
           <tbody id="meeting-schedule">
             
