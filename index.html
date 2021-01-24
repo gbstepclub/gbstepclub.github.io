@@ -480,10 +480,10 @@ $(document).ready(function(){
     let parent = $(this).parent();
     let children = parent.children();
     $.each(children, function(index, child) {
-      $(this).removeClass("active");
+      $(child).removeClass("active");
     });
 
-    $(this).toggleClass("active");
+    $(this).addClass("active");
     
     let day = $("#dd_day");
     let fellowship = $("#dd_fellowship");
@@ -493,13 +493,13 @@ $(document).ready(function(){
     let activeFellowship = "All";
     $.each(day.children(), (idx, elem) => {
       if ($(elem).hasClass("active")){
-        activeDay = $(this).text();
+        activeDay = $(elem).text();
       }
     });
 
     $.each(fellowship.children(), (idx, elem) => {
       if ($(elem).hasClass("active")){
-        activeFellowship = $(this).text();
+        activeFellowship = $(elem).text();
       }
     });
 
