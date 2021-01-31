@@ -50,8 +50,6 @@ main {
 a.sortable-table-row  {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 
 #meeting-notice {
@@ -92,7 +90,7 @@ div.small-spacer {
     }
 
     a.sortable-table-row {
-      flex-wrap: wrap;
+      flex-direction: column;
     }
 }
 

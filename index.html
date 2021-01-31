@@ -142,7 +142,16 @@
                 <li><a href="#!">SAA</a></li>
                 </ul>
               </td> 
-              <td>Info</td>
+              <td>
+                <a class="sortable-table-row  dropdown-trigger  light-blue-text darken-4" href="#" data-target="dd_meetingInfo">
+                  <div>Info</div>
+                  <i class="small material-icons">arrow_drop_down</i>
+                </a>
+                <ul id="dd_meetingInfo" class="dropdown-content">
+                  <li class="active"><a href="#!">All</a></li>
+                  <li><a href="#!">Hide Inactive</a></li>
+                </ul>
+              </td>
               <td></td>
             </tr>
           </thead>
@@ -444,6 +453,14 @@ function createMeetingInfo(meeting) {
   `;
 }
 
+function isInactive(meeting) {
+  if (!meeting.isVirtual && !meeting.isInPerson) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function createRowsForDay(day) {
     rows = "";
     $.each(day.list, function(index, meeting) {
@@ -453,8 +470,13 @@ function createRowsForDay(day) {
       } else {
         isClosed = "(O)";
       }
+    let isActive = "";
+    if (isInactive(meeting)){
+      isActive = "inactive";
+    }
+
     rows +=  `
-        <tr class="${meeting.fellowship} ${day.name}">
+        <tr class="${meeting.fellowship} ${day.name} ${isActive}">
             <td>${day.name.substr(0,3)}</td>
             <td>${meeting.time}</td>
             <td>${meeting.fellowship}</td>
@@ -487,10 +509,12 @@ $(document).ready(function(){
     
     let day = $("#dd_day");
     let fellowship = $("#dd_fellowship");
+    let meetingInfo = $("#dd_meetingInfo");
     let table = $("#meeting-schedule").children();
 
     let activeDay = "All";
     let activeFellowship = "All";
+    let activeInfo = "All";
     $.each(day.children(), (idx, elem) => {
       if ($(elem).hasClass("active")){
         activeDay = $(elem).text();
@@ -500,6 +524,12 @@ $(document).ready(function(){
     $.each(fellowship.children(), (idx, elem) => {
       if ($(elem).hasClass("active")){
         activeFellowship = $(elem).text();
+      }
+    });
+
+    $.each(meetingInfo.children(), (idx, elem) => {
+      if ($(elem).hasClass("active")){
+        activeInfo = $(elem).text();
       }
     });
 
@@ -516,6 +546,11 @@ $(document).ready(function(){
       if (activeFellowship != "All" && !$(elem).hasClass(activeFellowship)) {
         $(elem).hide();
       }
+
+      if (activeInfo != "All" && $(elem).hasClass("inactive")) {
+        $(elem).hide();
+      }
+
     });
   });
 
