@@ -373,12 +373,12 @@ let saturday = new Day("Saturday", [
     format: "As We Grow",
     isClosed: true,
   },
-  {
+  /*{ // not listed in ACA meeting list as of March 16, 2020
     time: "2:00 PM",
     fellowship: FELLOWSHIP_ACA,
     format: "ACA Workbook Study (2nd & 4th Saturdays",
     isClosed: true,
-  },
+  },*/
   {
     time: "7:30 PM",
     fellowship: FELLOWSHIP_AA,
@@ -413,13 +413,13 @@ let sunday = new Day("Sunday", [
 function createMeetingInfo(meeting) {
   infoList = [meeting.format];
   if (meeting.isInPerson && meeting.isVirtual) {
-    infoList.push("Held in person & virtually");
+    infoList.push("Held In Person & Virtually");
   } else if (meeting.isInPerson) {
-    infoList.push("Held in person");
+    infoList.push("In Person Meeting");
   } else if (meeting.isVirtual) {
-    infoList.push("Held virtually");
+    infoList.push("Held Virtually");
   } else {
-    infoList.push("Status unknown");
+    infoList.push("Meeting Inactive");
   }
 
   if (meeting.isVirtual) {

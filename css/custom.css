@@ -62,6 +62,26 @@ div.small-spacer {
   width: 30px;
 }
 
+.my-text-section {
+  margin-left: 20vw;
+  margin-right: 20vw;
+  word-wrap:break-word;
+}
+
+@media only screen and (max-width: 800px) {
+  .my-text-section {
+    margin-left: 15vw;
+    margin-right: 15vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .my-text-section {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+}
+
 @media only screen and (max-width: 540px) {
   #meeting-table {
         font-size:4vw !important;
@@ -75,3 +95,4 @@ div.small-spacer {
       flex-wrap: wrap;
     }
 }
+
