@@ -202,8 +202,8 @@
                   <i class="small material-icons">arrow_drop_down</i>
                 </a>
                 <ul id="dd_meetingInfo" class="dropdown-content">
-                  <li class="active"><a href="#!">All</a></li>
-                  <li><a href="#!">Hide Inactive</a></li>
+                  <li class="active"><a href="#!">Active</a></li>
+                  <li><a href="#!">Show Inactive</a></li>
                 </ul>
               </td>
               <td></td>
@@ -568,7 +568,7 @@ $(document).ready(function(){
 
     let activeDay = "All";
     let activeFellowship = "All";
-    let activeInfo = "All";
+    let activeInfo = "Active"; 
     $.each(day.children(), (idx, elem) => {
       if ($(elem).hasClass("active")){
         activeDay = $(elem).text();
@@ -601,7 +601,7 @@ $(document).ready(function(){
         $(elem).hide();
       }
 
-      if (activeInfo != "All" && $(elem).hasClass("inactive")) {
+      if (activeInfo == "Active" && $(elem).hasClass("inactive")) {
         $(elem).hide();
       }
 
