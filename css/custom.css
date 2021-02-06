@@ -22,19 +22,22 @@
   .flex.jcsbt {
     justify-content: space-between;
   }
+
+  .flex.jcsa {
+    justify-content: space-around;
+  }
   
   .flex.aic {
     align-items: center;
-  } 
+  }
+
+  .flex.wrap {
+    flex-wrap: wrap-reverse;
+  }
   
    /*
    END FLEXBOX
    */
-
-   .center-text {
-    word-wrap:break-word;
-    text-align:center;
-  }
 
    /* the following two rules make the footer stick to the bottom of the page*/
 body {
@@ -66,6 +69,17 @@ div.small-spacer {
   word-wrap:break-word;
 }
 
+.center-text {
+  word-wrap:break-word;
+  text-align:center;
+}
+
+.my-center {
+  position: absolute;
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
+}
+
 @media only screen and (max-width: 800px) {
   .my-text-section {
     margin-left: 15vw;
@@ -94,3 +108,17 @@ div.small-spacer {
     }
 }
 
+#contribution-buttons a {
+  margin:5px;
+}
+
+#contribution-buttons {
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 500px) {
+  #contribution-buttons {
+    flex-direction: column;
+    
+  }
+}
