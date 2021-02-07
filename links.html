@@ -46,8 +46,63 @@
 
 
       <main class="white">
-        <h3 class="center-text">Links</h3>
-        <h4 class="center-text">This web page is under construction</h4>
+        <div class="flex fdr jcc aic">
+          <h3>Links: </h3>
+          <div class="flex fdr jcc aic" style="padding-left:7px;padding-top:8px;">
+            <div>
+              <a class="dropdown-trigger btn green darken-3" href="#" data-target="dd_fellowship" id="fellowship-dropdown">
+                Select Fellowship
+                <i class="small material-icons right">arrow_drop_down</i>
+              </a>
+              <ul id="dd_fellowship" class="dropdown-content">
+                <li class="active"><a href="#!">None</a></li>
+                <li><a href="#!">AA</a></li>
+                <li><a href="#!">ACA</a></li>
+                <li><a href="#!">Al-Anon</a></li>
+                <li><a href="#!">CDA</a></li>
+                <li><a href="#!">DRA</a></li>
+                <li><a href="#!">NA</a></li>
+                <li><a href="#!">SAA</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="fellowship-links">
+          <div id="aa-links" class="flex fdc center-text" style="display:none">
+            <a href="https://drive.google.com/file/d/1Xbo0TSDM-wIXedafhGILJW_2EL-dmebS/view?usp=sharing">
+            Joe and Charlie Big Book Study (zip file)
+            </a>
+            <a href="https://drive.google.com/file/d/1LoWTko56SBLyxx_rnUS-5I_01FwiYX9n/view?usp=sharing">
+            4th Step Workshop Handouts
+            </a>
+          </div>
+  
+          <div id="aca-links" class="flex fdc center-text" style="display:none">
+            <span>None yet!</span>
+          </div>
+  
+          <div id="ala-links" class="flex fdc center-text" style="display:none">
+            <span>None yet!</span>
+          </div>
+  
+          <div id="cda-links" class="flex fdc center-text" style="display:none">
+            <span>None yet!</span>
+          </div>
+  
+          <div id="dra-links" class="flex fdc center-text" style="display:none">
+            <span>None yet!</span>
+          </div>
+  
+          <div id="na-links" class="flex fdc center-text" style="display:none">
+            <span>None yet!</span>
+          </div>
+  
+          <div id="saa-links" class="flex fdc center-text" style="display:none">
+            <span>None yet!</span>
+          </div>
+        </div>
+
       </main>
 
       <footer class="page-footer  green darken-3">
@@ -70,13 +125,52 @@
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript">
-    
+
+let links = {
+    "AA" : $("#aa-links"), 
+    "ACA" : $("#aca-links"),
+    "Al-Anon": $("#ala-links"), 
+    "CDA" : $("#cda-links"), 
+    "DRA" : $("#dra-links"),
+    "NA" : $("#na-links"),
+    "SAA" : $("#saa-links")
+    };
+
 //     https://learn.jquery.com/using-jquery-core/document-ready/
 $(document).ready(function(){
-
   //      https://materializecss.com/dropdown.html  
   M.AutoInit();
   $('.sidenav').sidenav();
+
+  Object.keys(links).forEach(function(key) {
+      links[key].hide();
+  });
+
+  $("#dd_fellowship li").on("click",function() {
+    let parent = $(this).parent();
+    let children = parent.children();
+    $.each(children, function(index, child) {
+      $(child).removeClass("active");
+    });
+    $(this).addClass("active");
+    let text = $(this).text();
+
+    Object.keys(links).forEach(function(key) {
+      if (key === text)
+      {
+        links[key].show();
+      }
+      else
+      {
+        links[key].hide();
+      }
+    });
+
+    if (text === "None") {
+      text = "Select Fellowship";
+    }
+    $("#fellowship-dropdown").text(text).append('<i class="small material-icons right">arrow_drop_down</i>');
+  });
 });
       </script>
 </body>

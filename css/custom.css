@@ -108,17 +108,10 @@ div.small-spacer {
     }
 }
 
-#contribution-buttons a {
-  margin:5px;
+#contributions-list a {
+  margin:2.5px;
 }
 
-#contribution-buttons {
-  flex-direction: row;
-}
-
-@media only screen and (max-width: 500px) {
-  #contribution-buttons {
-    flex-direction: column;
-    
-  }
+#fellowship-links a {
+  margin-bottom:7.5px;
 }
