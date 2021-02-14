@@ -97,6 +97,7 @@
           <table>
             <thead>
               <h5 class="center-text">Zoom Phone Numbers</h5>
+              <div class="center-text">Instructions: Call any of these numbers. Then provide the meeting ID and password. More information is available here: <a href="https://support.zoom.us/hc/en-us/articles/201362663-Joining-a-Meeting-by-Phone">Join a Zoom Meeting by Phone</a></div>
             </thead>
             <tbody>
               <tr>
@@ -249,14 +250,16 @@ class Day {
     }
 }
 
-class Meeting {
-    constructor(time, fellowship, format, isClosed) {
-        this.time = time;
-        this.fellowship = fellowship;
-        this.format = format;
-        this.isClosed = isClosed;
-    }
-}
+// the Meeting class has to many parameters that below they are created using object literal syntax. omitteed boolean fields evaluate to false
+// time: string
+// fellowship: string
+// format: string
+// isClosed: boolean
+// isVirtual: boolean
+// isInPerson: boolean
+// meetingId: string
+// password: string
+// link: string
 
 // warning: the fellow ship type (AA, NA, ect) must be the same here as it is in the dropdown bar in the table header. the javascript is doing string comparisons.
 // be sure to use a variable rather than re-typing "AA" or the like when initializing Day classes. That way if something is wrong you only have to check two places. 
@@ -608,6 +611,7 @@ $(document).ready(function(){
     });
   });
 
+    // create meeting schedule 
     $("#meeting-schedule").append(createRowsForDay(monday));
     $("#meeting-schedule").append(createRowsForDay(tuesday));
     $("#meeting-schedule").append(createRowsForDay(wednesday));
@@ -615,6 +619,9 @@ $(document).ready(function(){
     $("#meeting-schedule").append(createRowsForDay(friday));
     $("#meeting-schedule").append(createRowsForDay(saturday));
     $("#meeting-schedule").append(createRowsForDay(sunday));
+
+    // want to apply the filters on page load. do this by triggering a cl ick. 
+    $("#dd_day li").first().trigger("click");
 });
     </script>
   </body>
