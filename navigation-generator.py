@@ -1,6 +1,6 @@
 # run with python3
 
-import re
+from bs4 import BeautifulSoup as bs
 
 # the main bar has 3 items as of now, the third one being "More", defined in drop_down
 main_bar = { \
@@ -12,7 +12,7 @@ main_bar = { \
 drop_down = { \
 	'contact.html': 'Contact Us', \
 	'donate.html' : 'Donate', \
-	'links.html' : 'Links', \
+	'links.html' : 'Link', \
 	}
 
 # everything is listed in the sidenav, used for mobile browsers 
@@ -77,17 +77,22 @@ for f in html_files:
 	f_content = ''
 	with open(f, 'r') as current_file:
 		f_content = current_file.read()
+
+	parser = 'html.parser'
+	
+	# don't try parsing html with regular expressions	
+	soup = bs(f_content, parser)
 	
 	# update main_bar
-	f_content = re.sub(r'<ul id="nav\-mobile"(.|\n)+<\/ul>', main_bar_html, f_content)
-	
+	soup.find(id='nav-mobile').replace_with(bs(main_bar_html, parser))
+
 	# update drop_down
-	f_content = re.sub(r'<ul id="dropdown\-more"(.|\n)+<\/ul>', drop_down_html, f_content)
+	soup.find(id="dropdown-more").replace_with(bs(drop_down_html, parser))
 	
 	# update side_nav
-	f_content = re.sub(r'<ul id="slide\-out"(.|\n)+<\/ul>', side_nav_html, f_content)
+	soup.find(id="slide-out").replace_with(bs(side_nav_html, parser))
 	
 	# write changes back to file
 	with open(f, 'w') as current_file:
-		f.write(f_content)
+		current_file.write(soup.prettify())
 	
