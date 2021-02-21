@@ -574,19 +574,19 @@ $(document).ready(function(){
     let activeInfo = "Active"; 
     $.each(day.children(), (idx, elem) => {
       if ($(elem).hasClass("active")){
-        activeDay = $(elem).text();
+        activeDay = $(elem).text().trim();
       }
     });
 
     $.each(fellowship.children(), (idx, elem) => {
       if ($(elem).hasClass("active")){
-        activeFellowship = $(elem).text();
+        activeFellowship = $(elem).text().trim();
       }
     });
 
     $.each(meetingInfo.children(), (idx, elem) => {
       if ($(elem).hasClass("active")){
-        activeInfo = $(elem).text();
+        activeInfo = $(elem).text().trim();
       }
     });
 
