@@ -1,6 +1,7 @@
 # run with python3
 
 from bs4 import BeautifulSoup as bs
+import format
 
 # the main bar has 3 items as of now, the third one being "More", defined in drop_down
 main_bar = { \
@@ -94,5 +95,8 @@ for f in html_files:
 	
 	# write changes back to file
 	with open(f, 'w') as current_file:
-		current_file.write(str(soup))
+		crappy_soup = str(soup)
+		better_soup = format.html(crappy_soup)
+		even_better = format.javascript(better_soup)
+		current_file.write(even_better)
 	

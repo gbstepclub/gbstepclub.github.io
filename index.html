@@ -1,615 +1,613 @@
 <!DOCTYPE doctype html>
 
 <html>
-<head>
-<meta charset="utf-8"/>
-<meta content="ie=edge" http-equiv="x-ua-compatible"/>
-<title>Greenbelt Step Club, Inc</title>
-<meta content="" name="description"/>
-<!-- Tell browser that the website is optimized for the phone -->
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<!--Import materialize.css-->
-<link href="css/materialize.min.css" rel="stylesheet" type="text/css"/>
-<link href="css/custom.css" rel="stylesheet" type="text/css"/>
-<!-- Material Icons -->
-<link href="css/local-gstatic.css" rel="stylesheet"/>
-</head>
-<body class="white">
-<nav class="navbar">
-<div class="nav-wrapper green darken-3">
-<a class="brand-logo center" href="#" id="navbar-title">Greenbelt Step Club</a>
-<ul class="right hide-on-med-and-down" id="nav-mobile">
-<li class="active"><a href="index.html">Meetings</a></li>
-<li class=""><a href="about.html">About</a></li>
-<li class=""><a class="dropdown-trigger" data-target="dropdown-more" href="#">More<i class="material-icons right">arrow_drop_down</i></a></li>
-</ul>
-<!-- this makes the navbar slide out for the phone -->
-<a class="sidenav-trigger button-collapse right" data-target="slide-out" href="#"><i class="material-icons black-text">menu</i></a>
-</div>
-</nav>
-<ul class="dropdown-content" id="dropdown-more">
-<li class=""><a href="contact.html">Contact Us</a></li>
-<li class=""><a href="donate.html">Donate</a></li>
-<li class=""><a href="links.html">Link</a></li>
-</ul>
-<!-- this will appear on the phone navbar -->
-<ul class="sidenav" id="slide-out">
-<li class="active"><a href="index.html">Meetings</a></li>
-<li class=""><a href="about.html">About</a></li>
-<li class=""><a href="contact.html">Contact Us</a></li>
-<li class=""><a href="donate.html">Donate</a></li>
-<li class=""><a href="links.html">Link</a></li>
-</ul>
-<div class="modal" id="legend-modal">
-<div class="modal-content">
-<table>
-<thead>
-<h5 class="center-text">Legend</h5>
-</thead>
-<tbody>
-<tr>
-<td>AA = Alcoholics Anonymous</td>
-<td>Al-Anon = Friends and Family of Alcoholics</td>
-</tr>
-<tr>
-<td>ACA = Adult Children of Alcoholics</td>
-<td>CDA = Chemically Dependent Anonymous</td>
-</tr>
-<tr>
-<td>DRA = Dual Recovery Anonymous</td>
-<td>NA = Narcotics Anonymous</td>
-</tr>
-<tr>
-<td>SAA = Sex Addicts Anonymous</td>
-<td></td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td>
-              (C) indicates closed meeting: Closed meetings are only for those persons who believe they have a problem
-              in the area that a particular fellowship addresses
-            </td>
-</tr>
-<tr>
-<td>
-              (O) indicates open meeting: Open meetings are open to anyone with an interest in the particular fellowship
-            </td>
-</tr>
-<tr>
-<td>Meetings with "Status unknown" may or may not be active</td>
-</tr>
-</tfoot>
-</table>
-</div>
-<div class="modal-footer">
-<a class="modal-close btn waves-effect waves-green green darken-3 text-accent-3" href="#!">Close</a>
-</div>
-</div>
-<div class="modal" id="zoom-phone-modal">
-<div class="modal-content">
-<table>
-<thead>
-<h5 class="center-text">Zoom Phone Numbers</h5>
-<div class="center-text">Instructions: Call any of these numbers. Then provide the meeting ID and password.
-            More information is available here: <a href="https://support.zoom.us/hc/en-us/articles/201362663-Joining-a-Meeting-by-Phone">Join a Zoom Meeting
-              by Phone</a></div>
-</thead>
-<tbody>
-<tr>
-<td>+1 301 715 8592</td>
-<td> US </td>
-<td>Germantown</td>
-</tr>
-<tr>
-<td>+1 646 876 9923</td>
-<td> US </td>
-<td>New York</td>
-</tr>
-<tr>
-<td>+1 312 626 6799</td>
-<td> US </td>
-<td>Chicago</td>
-</tr>
-<tr>
-<td>+1 346 248 7799</td>
-<td> US </td>
-<td>Houston</td>
-</tr>
-<tr>
-<td>+1 408 638 0968</td>
-<td> US </td>
-<td>San Jose</td>
-</tr>
-<tr>
-<td>+1 669 900 6833</td>
-<td> US </td>
-<td>San Jose</td>
-</tr>
-<tr>
-<td>+1 253 215 8782</td>
-<td> US </td>
-<td>Tacoma</td>
-</tr>
-</tbody>
-<tfoot></tfoot>
-</table>
-</div>
-<div class="modal-footer">
-<a class="modal-close btn waves-effect waves-green green darken-3 text-accent-3" href="#!">Close</a>
-</div>
-</div>
-<main class="white">
-<div class="section">
-<div class="center-text flex fdc aic" id="meeting-notice">
-<h5>Meeting List as of 3/13/2019</h5>
-<div class="flex fdr jcsbt">
-<a class="modal-trigger" href="#legend-modal">Legend</a>
-<div class="small-spacer"></div>
-<a href="https://www.google.com/maps/place/143+Centerway,+Greenbelt,+MD+20770,+USA/@39.0015997,-76.8778304,17z/data=!3m1!4b1!4m5!3m4!1s0x89b7c3cd8902a263:0x6a7e105fa5ed9955!8m2!3d39.0015997!4d-76.8756364">Directions</a>
-<div class="small-spacer"></div>
-<a class="modal-trigger" href="#zoom-phone-modal">Zoom Phone #'s</a>
-</div>
-</div>
-<table id="meeting-table">
-<thead>
-<tr>
-<td>
-<!-- https://materializecss.com/dropdown.html-->
-<a class="sortable-table-row dropdown-trigger light-blue-text darken-4" data-target="dd_day" href="#">
-<div>Day</div>
-<i class="small material-icons">arrow_drop_down</i>
-</a>
-<ul class="dropdown-content" id="dd_day">
-<li class="active"><a href="#!">All</a></li>
-<li><a href="#!">Monday</a></li>
-<li><a href="#!">Tuesday</a></li>
-<li><a href="#!">Wednesday</a></li>
-<li><a href="#!">Thursday</a></li>
-<li><a href="#!">Friday</a></li>
-<li><a href="#!">Saturday</a></li>
-<li><a href="#!">Sunday</a></li>
-</ul>
-</td>
-<td>Time</td>
-<td>
-<!-- https://materializecss.com/dropdown.html-->
-<a class="sortable-table-row dropdown-trigger light-blue-text darken-4" data-target="dd_fellowship" href="#">
-<div>Type</div>
-<i class="small material-icons">arrow_drop_down</i>
-</a>
-<ul class="dropdown-content" id="dd_fellowship">
-<li class="active"><a href="#!">All</a></li>
-<li><a href="#!">AA</a></li>
-<li><a href="#!">ACA</a></li>
-<li><a href="#!">Al-Anon</a></li>
-<li><a href="#!">CDA</a></li>
-<li><a href="#!">DRA</a></li>
-<li><a href="#!">NA</a></li>
-<li><a href="#!">SAA</a></li>
-</ul>
-</td>
-<td>
-<a class="sortable-table-row dropdown-trigger light-blue-text darken-4" data-target="dd_meetingInfo" href="#">
-<div>Info</div>
-<i class="small material-icons">arrow_drop_down</i>
-</a>
-<ul class="dropdown-content" id="dd_meetingInfo">
-<li class="active"><a href="#!">Active</a></li>
-<li><a href="#!">Show Inactive</a></li>
-</ul>
-</td>
-<td></td>
-</tr>
-</thead>
-<tbody id="meeting-schedule">
-</tbody>
-</table>
-</div>
-</main>
-<footer class="page-footer green darken-3">
-<div class="container">
-<div class="row">
-<div class="col l6 s12">
-<h5 class="white-text"></h5>
-<p class="grey-text text-lighten-4"></p>
-</div>
-<div class="col l4 offset-l2 s12">
-<ul>
-<li><a class="white-text" href="index.html"></a></li>
-<li><a class="white-text" href="index.html"></a></li>
-<li><a class="white-text" href="index.html"></a></li>
-</ul>
-</div>
-</div>
-</div>
-</footer>
-<!--JavaScript at end of body for optimized loading-->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="js/materialize.min.js" type="text/javascript"></script>
-<script type="text/javascript">
+	<head>
+		<meta charset="utf-8"/>
+		<meta content="ie=edge" http-equiv="x-ua-compatible"/>
+		<title>Greenbelt Step Club, Inc</title>
+		<meta content="" name="description"/>
+		<!-- Tell browser that the website is optimized for the phone -->
+		<meta content="width=device-width, initial-scale=1" name="viewport"/>
+		<!--Import materialize.css-->
+		<link href="css/materialize.min.css" rel="stylesheet" type="text/css"/>
+		<link href="css/custom.css" rel="stylesheet" type="text/css"/>
+		<!-- Material Icons -->
+		<link href="css/local-gstatic.css" rel="stylesheet"/>
+	</head>
+	<body class="white">
+		<nav class="navbar">
+			<div class="nav-wrapper green darken-3">
+				<a class="brand-logo center" href="#" id="navbar-title">Greenbelt Step Club</a>
+				<ul class="right hide-on-med-and-down" id="nav-mobile">
+					<li class="active"><a href="index.html">Meetings</a></li>
+					<li class=""><a href="about.html">About</a></li>
+					<li class=""><a class="dropdown-trigger" data-target="dropdown-more" href="#">More<i class="material-icons right">arrow_drop_down</i></a></li>
+				</ul>
+				<!-- this makes the navbar slide out for the phone -->
+				<a class="sidenav-trigger button-collapse right" data-target="slide-out" href="#"><i class="material-icons black-text">menu</i></a>
+			</div>
+		</nav>
+		<ul class="dropdown-content" id="dropdown-more">
+			<li class=""><a href="contact.html">Contact Us</a></li>
+			<li class=""><a href="donate.html">Donate</a></li>
+			<li class=""><a href="links.html">Link</a></li>
+		</ul>
+		<!-- this will appear on the phone navbar -->
+		<ul class="sidenav" id="slide-out">
+			<li class="active"><a href="index.html">Meetings</a></li>
+			<li class=""><a href="about.html">About</a></li>
+			<li class=""><a href="contact.html">Contact Us</a></li>
+			<li class=""><a href="donate.html">Donate</a></li>
+			<li class=""><a href="links.html">Link</a></li>
+		</ul>
+		<div class="modal" id="legend-modal">
+			<div class="modal-content">
+				<table>
+					<thead>
+						<h5 class="center-text">Legend</h5>
+					</thead>
+					<tbody>
+						<tr>
+							<td>AA = Alcoholics Anonymous</td>
+							<td>Al-Anon = Friends and Family of Alcoholics</td>
+						</tr>
+						<tr>
+							<td>ACA = Adult Children of Alcoholics</td>
+							<td>CDA = Chemically Dependent Anonymous</td>
+						</tr>
+						<tr>
+							<td>DRA = Dual Recovery Anonymous</td>
+							<td>NA = Narcotics Anonymous</td>
+						</tr>
+						<tr>
+							<td>SAA = Sex Addicts Anonymous</td>
+							<td></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td>
+								(C) indicates closed meeting: Closed meetings are only for those persons who believe they have a problem
+								in the area that a particular fellowship addresses
+							</td>
+						</tr>
+						<tr>
+							<td>
+								(O) indicates open meeting: Open meetings are open to anyone with an interest in the particular fellowship
+							</td>
+						</tr>
+						<tr>
+							<td>Meetings with "Status unknown" may or may not be active</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<a class="modal-close btn waves-effect waves-green green darken-3 text-accent-3" href="#!">Close</a>
+			</div>
+		</div>
+		<div class="modal" id="zoom-phone-modal">
+			<div class="modal-content">
+				<table>
+					<thead>
+						<h5 class="center-text">Zoom Phone Numbers</h5>
+						<div class="center-text">Instructions: Call any of these numbers. Then provide the meeting ID and password.
+							More information is available here: <a href="https://support.zoom.us/hc/en-us/articles/201362663-Joining-a-Meeting-by-Phone">Join a Zoom Meeting
+						by Phone</a></div>
+					</thead>
+					<tbody>
+						<tr>
+							<td>+1 301 715 8592</td>
+							<td> US </td>
+							<td>Germantown</td>
+						</tr>
+						<tr>
+							<td>+1 646 876 9923</td>
+							<td> US </td>
+							<td>New York</td>
+						</tr>
+						<tr>
+							<td>+1 312 626 6799</td>
+							<td> US </td>
+							<td>Chicago</td>
+						</tr>
+						<tr>
+							<td>+1 346 248 7799</td>
+							<td> US </td>
+							<td>Houston</td>
+						</tr>
+						<tr>
+							<td>+1 408 638 0968</td>
+							<td> US </td>
+							<td>San Jose</td>
+						</tr>
+						<tr>
+							<td>+1 669 900 6833</td>
+							<td> US </td>
+							<td>San Jose</td>
+						</tr>
+						<tr>
+							<td>+1 253 215 8782</td>
+							<td> US </td>
+							<td>Tacoma</td>
+						</tr>
+					</tbody>
+					<tfoot></tfoot>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<a class="modal-close btn waves-effect waves-green green darken-3 text-accent-3" href="#!">Close</a>
+			</div>
+		</div>
+		<main class="white">
+			<div class="section">
+				<div class="center-text flex fdc aic" id="meeting-notice">
+					<h5>Meeting List as of 3/13/2019</h5>
+					<div class="flex fdr jcsbt">
+						<a class="modal-trigger" href="#legend-modal">Legend</a>
+						<div class="small-spacer"></div>
+						<a href="https://www.google.com/maps/place/143+Centerway,+Greenbelt,+MD+20770,+USA/@39.0015997,-76.8778304,17z/data=!3m1!4b1!4m5!3m4!1s0x89b7c3cd8902a263:0x6a7e105fa5ed9955!8m2!3d39.0015997!4d-76.8756364">Directions</a>
+						<div class="small-spacer"></div>
+						<a class="modal-trigger" href="#zoom-phone-modal">Zoom Phone #'s</a>
+					</div>
+				</div>
+				<table id="meeting-table">
+					<thead>
+						<tr>
+							<td>
+								<!-- https://materializecss.com/dropdown.html-->
+								<a class="sortable-table-row dropdown-trigger light-blue-text darken-4" data-target="dd_day" href="#">
+									<div>Day</div>
+									<i class="small material-icons">arrow_drop_down</i>
+								</a>
+								<ul class="dropdown-content" id="dd_day">
+									<li class="active"><a href="#!">All</a></li>
+									<li><a href="#!">Monday</a></li>
+									<li><a href="#!">Tuesday</a></li>
+									<li><a href="#!">Wednesday</a></li>
+									<li><a href="#!">Thursday</a></li>
+									<li><a href="#!">Friday</a></li>
+									<li><a href="#!">Saturday</a></li>
+									<li><a href="#!">Sunday</a></li>
+								</ul>
+							</td>
+							<td>Time</td>
+							<td>
+								<!-- https://materializecss.com/dropdown.html-->
+								<a class="sortable-table-row dropdown-trigger light-blue-text darken-4" data-target="dd_fellowship" href="#">
+									<div>Type</div>
+									<i class="small material-icons">arrow_drop_down</i>
+								</a>
+								<ul class="dropdown-content" id="dd_fellowship">
+									<li class="active"><a href="#!">All</a></li>
+									<li><a href="#!">AA</a></li>
+									<li><a href="#!">ACA</a></li>
+									<li><a href="#!">Al-Anon</a></li>
+									<li><a href="#!">CDA</a></li>
+									<li><a href="#!">DRA</a></li>
+									<li><a href="#!">NA</a></li>
+									<li><a href="#!">SAA</a></li>
+								</ul>
+							</td>
+							<td>
+								<a class="sortable-table-row dropdown-trigger light-blue-text darken-4" data-target="dd_meetingInfo" href="#">
+									<div>Info</div>
+									<i class="small material-icons">arrow_drop_down</i>
+								</a>
+								<ul class="dropdown-content" id="dd_meetingInfo">
+									<li class="active"><a href="#!">Active</a></li>
+									<li><a href="#!">Show Inactive</a></li>
+								</ul>
+							</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody id="meeting-schedule">
+					</tbody>
+				</table>
+			</div>
+		</main>
+		<footer class="page-footer green darken-3">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 s12">
+						<h5 class="white-text"></h5>
+						<p class="grey-text text-lighten-4"></p>
+					</div>
+					<div class="col l4 offset-l2 s12">
+						<ul>
+							<li><a class="white-text" href="index.html"></a></li>
+							<li><a class="white-text" href="index.html"></a></li>
+							<li><a class="white-text" href="index.html"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--JavaScript at end of body for optimized loading-->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="js/materialize.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+// it is too much trouble to  manually create html tables. just define them in javascript and let jquery code for you
+class Day {
+	constructor(name, list) {
+		this.name = name; // it is too much trouble to manually type the day each time a Meeting class is created. add it once here.
+		this.list = list;
+	}
+}
+
+// the Meeting class has to many parameters that below they are created using object literal syntax. omitteed boolean fields evaluate to false
+// time: string
+// fellowship: string
+// format: string
+// isClosed: boolean
+// isVirtual: boolean
+// isInPerson: boolean
+// meetingId: string
+// password: string
+// link: string
+
+// warning: the fellow ship type (AA, NA, ect) must be the same here as it is in the dropdown bar in the table header. the javascript is doing string comparisons.
+// be sure to use a variable rather than re-typing "AA" or the like when initializing Day classes. That way if something is wrong you only have to check two places.
+let FELLOWSHIP_AA = "AA";
+let FELLOWSHIP_ACA = "ACA";
+let FELLOWSHIP_AlANON = "Al-Anon";
+let FELLOWSHIP_CDA = "CDA";
+let FELLOWSHIP_DRA = "DRA";
+let FELLOWSHIP_NA = "NA";
+let FELLOWSHIP_SAA = "SAA";
 
 
-    // it is too much trouble to  manually create html tables. just define them in javascript and let jquery code for you
-    class Day {
-      constructor(name, list) {
-        this.name = name; // it is too much trouble to manually type the day each time a Meeting class is created. add it once here. 
-        this.list = list;
-      }
-    }
+let sunshineSobriety_meetingId = "919 226 699";
+let sunshineSobriety_meetingPassword = "061035";
+let sunshineSobriety_meetingLink = "https://zoom.us/j/919226699?pwd=WGI2VEpSb1VnSUtEUnF5azNFSkZ5QT09";
 
-    // the Meeting class has to many parameters that below they are created using object literal syntax. omitteed boolean fields evaluate to false
-    // time: string
-    // fellowship: string
-    // format: string
-    // isClosed: boolean
-    // isVirtual: boolean
-    // isInPerson: boolean
-    // meetingId: string
-    // password: string
-    // link: string
-
-    // warning: the fellow ship type (AA, NA, ect) must be the same here as it is in the dropdown bar in the table header. the javascript is doing string comparisons.
-    // be sure to use a variable rather than re-typing "AA" or the like when initializing Day classes. That way if something is wrong you only have to check two places. 
-    let FELLOWSHIP_AA = "AA";
-    let FELLOWSHIP_ACA = "ACA";
-    let FELLOWSHIP_AlANON = "Al-Anon";
-    let FELLOWSHIP_CDA = "CDA";
-    let FELLOWSHIP_DRA = "DRA";
-    let FELLOWSHIP_NA = "NA";
-    let FELLOWSHIP_SAA = "SAA";
+function SunshineSobrietyMeeting(meetingFormat) {
+	return {
+		time: "6:45 AM",
+		fellowship: FELLOWSHIP_AA,
+		format: meetingFormat,
+		isClosed: true,
+		isVirtual: true,
+		isInPerson: false,
+		meetingId: sunshineSobriety_meetingId,
+		password: sunshineSobriety_meetingPassword,
+		link: sunshineSobriety_meetingLink,
+	}
+}
 
 
-    let sunshineSobriety_meetingId = "919 226 699";
-    let sunshineSobriety_meetingPassword = "061035";
-    let sunshineSobriety_meetingLink = "https://zoom.us/j/919226699?pwd=WGI2VEpSb1VnSUtEUnF5azNFSkZ5QT09";
+let monday = new Day("Monday", [
+SunshineSobrietyMeeting("Slogans"),
+{
+	time: "10:00 AM",
+	fellowship: FELLOWSHIP_AA,
+	format: "As  Bill Sees It (last Mon. Sponsorhip)",
+	isClosed: true,
+},
+{
+	time: "12:00 PM",
+	fellowship: FELLOWSHIP_AA,
+	format: "Big Book",
+	isClosed: true,
+},
+{
+	time: "4:30 PM",
+	fellowship: FELLOWSHIP_AA,
+	format: "Living Sober",
+	isClosed: true,
+},
+{
+	time: "6:30 PM",
+	fellowship: FELLOWSHIP_DRA,
+	format: "Monday Night & We're Alright",
+	isClosed: false,
+	isInPerson: true,
+},
+]);
 
-    function SunshineSobrietyMeeting(meetingFormat) {
-      return {
-        time: "6:45 AM",
-        fellowship: FELLOWSHIP_AA,
-        format: meetingFormat,
-        isClosed: true,
-        isVirtual: true,
-        isInPerson: false,
-        meetingId: sunshineSobriety_meetingId,
-        password: sunshineSobriety_meetingPassword,
-        link: sunshineSobriety_meetingLink,
-      }
-    }
+let tuesday = new Day("Tuesday", [
+SunshineSobrietyMeeting("Tools of Recovery"),
+{
+	time: "12:00 PM",
+	fellowship: FELLOWSHIP_CDA,
+	format: "Cellar Dwellers",
+},
+{
+	time: "4:30 PM",
+	fellowship: FELLOWSHIP_AA,
+	format: "Daily Reflections",
+	isClosed: true
+},
+{
+	time: "7:30 PM",
+	fellowship: FELLOWSHIP_NA,
+	format: "A.W.O.L.",
+},
+]);
 
+let wednesday = new Day("Wednesday", [
+SunshineSobrietyMeeting("Big Book"),
+{
+	time: "10:00 AM",
+	fellowship: FELLOWSHIP_AA,
+	format: "8th and 9th Steps (last Wed. AA Legacy)",
+	isClosed: true,
+},
+{
+	time: "12:00 PM",
+	fellowship: FELLOWSHIP_NA,
+	format: "Just For Today",
+},
+{
+	time: "4:30 PM",
+	fellowship: FELLOWSHIP_AA,
+	format: "Experience, Strength, and Hope",
+	isClosed: true,
+},
+{
+	time: "7:00 PM",
+	fellowship: FELLOWSHIP_AA,
+	format: "Steps & Traditions Study Group",
+},
+]);
 
-    let monday = new Day("Monday", [
-      SunshineSobrietyMeeting("Slogans"),
-      {
-        time: "10:00 AM",
-        fellowship: FELLOWSHIP_AA,
-        format: "As  Bill Sees It (last Mon. Sponsorhip)",
-        isClosed: true,
-      },
-      {
-        time: "12:00 PM",
-        fellowship: FELLOWSHIP_AA,
-        format: "Big Book",
-        isClosed: true,
-      },
-      {
-        time: "4:30 PM",
-        fellowship: FELLOWSHIP_AA,
-        format: "Living Sober",
-        isClosed: true,
-      },
-      {
-        time: "6:30 PM",
-        fellowship: FELLOWSHIP_DRA,
-        format: "Monday Night & We're Alright",
-        isClosed: false,
-        isInPerson: true,
-      },
-    ]);
+let thursday = new Day("Thursday", [
+SunshineSobrietyMeeting("Steps & Traditions"),
+{
+	time: "12:00 PM",
+	fellowship: FELLOWSHIP_NA,
+	format: "Not High at Noon",
+},
+{
+	time: "4:30 PM",
+	fellowship: FELLOWSHIP_AA,
+	format: "Grapevine",
+},
+{
+	time: "6:30 PM",
+	fellowship: FELLOWSHIP_AlANON,
+	format: "Early Bird Serenity",
+},
+{
+	time: "8:00 PM",
+	fellowship: FELLOWSHIP_SAA,
+	format: "Recovery in Action",
+	isClosed: true
+},
+]);
 
-    let tuesday = new Day("Tuesday", [
-      SunshineSobrietyMeeting("Tools of Recovery"),
-      {
-        time: "12:00 PM",
-        fellowship: FELLOWSHIP_CDA,
-        format: "Cellar Dwellers",
-      },
-      {
-        time: "4:30 PM",
-        fellowship: FELLOWSHIP_AA,
-        format: "Daily Reflections",
-        isClosed: true
-      },
-      {
-        time: "7:30 PM",
-        fellowship: FELLOWSHIP_NA,
-        format: "A.W.O.L.",
-      },
-    ]);
+let friday = new Day("Friday", [
+SunshineSobrietyMeeting("How It Works"),
+{
+	time: "10:00 AM",
+	fellowship: FELLOWSHIP_AA,
+	format: "Acceptance/Beginners",
+	isClosed: true,
+},
+{
+	time: "12:00 PM",
+	fellowship: FELLOWSHIP_AA,
+	format: "Acceptance",
+	isClosed: true,
+},
+{
+	time: "4:30 PM",
+	fellowship: FELLOWSHIP_AA,
+	format: "AA Literature",
+	isClosed: true,
+},
+{
+	time: "7:00 PM",
+	fellowship: FELLOWSHIP_CDA,
+	format: "Friday Happy Hour",
+},
+]);
 
-    let wednesday = new Day("Wednesday", [
-      SunshineSobrietyMeeting("Big Book"),
-      {
-        time: "10:00 AM",
-        fellowship: FELLOWSHIP_AA,
-        format: "8th and 9th Steps (last Wed. AA Legacy)",
-        isClosed: true,
-      },
-      {
-        time: "12:00 PM",
-        fellowship: FELLOWSHIP_NA,
-        format: "Just For Today",
-      },
-      {
-        time: "4:30 PM",
-        fellowship: FELLOWSHIP_AA,
-        format: "Experience, Strength, and Hope",
-        isClosed: true,
-      },
-      {
-        time: "7:00 PM",
-        fellowship: FELLOWSHIP_AA,
-        format: "Steps & Traditions Study Group",
-      },
-    ]);
+let saturday = new Day("Saturday", [
+SunshineSobrietyMeeting("Necessary for Life"),
+{
+	time: "8:30 AM",
+	fellowship: FELLOWSHIP_AA,
+	format: "6th and 7th Steps",
+	isClosed: true,
+},
+{
+	time: "10:00 AM",
+	fellowship: FELLOWSHIP_AA,
+	format: "Beginners Step 123 Meeting",
+	isClosed: true,
+},
+{
+	time: "12:00 PM",
+	fellowship: FELLOWSHIP_ACA,
+	format: "As We Grow",
+	isClosed: true,
+},
+/*{ // not listed in ACA meeting list as of March 16, 2020
+	time: "2:00 PM",
+	fellowship: FELLOWSHIP_ACA,
+	format: "ACA Workbook Study (2nd & 4th Saturdays",
+	isClosed: true,
+},*/
+{
+	time: "7:30 PM",
+	fellowship: FELLOWSHIP_AA,
+	format: "Self Examination, Meditation, and Prayer",
+},
+]);
 
-    let thursday = new Day("Thursday", [
-      SunshineSobrietyMeeting("Steps & Traditions"),
-      {
-        time: "12:00 PM",
-        fellowship: FELLOWSHIP_NA,
-        format: "Not High at Noon",
-      },
-      {
-        time: "4:30 PM",
-        fellowship: FELLOWSHIP_AA,
-        format: "Grapevine",
-      },
-      {
-        time: "6:30 PM",
-        fellowship: FELLOWSHIP_AlANON,
-        format: "Early Bird Serenity",
-      },
-      {
-        time: "8:00 PM",
-        fellowship: FELLOWSHIP_SAA,
-        format: "Recovery in Action",
-        isClosed: true
-      },
-    ]);
+let sunday = new Day("Sunday", [
+SunshineSobrietyMeeting("Came to Believe"),
+{
+	time: "10:30 AM",
+	fellowship: FELLOWSHIP_AA,
+	format: "Tools of Recovery",
+},
+{
+	time: "12:00 PM",
+	fellowship: FELLOWSHIP_AA,
+	format: "AA Literature",
+},
+{
+	time: "6:00 PM",
+	fellowship: FELLOWSHIP_CDA,
+	format: "Sunday Fun Bunch"
+},
+{
+	time: "8:00 PM",
+	fellowship: FELLOWSHIP_AA,
+	format: "Speaker Meeting",
+},
+]);
 
-    let friday = new Day("Friday", [
-      SunshineSobrietyMeeting("How It Works"),
-      {
-        time: "10:00 AM",
-        fellowship: FELLOWSHIP_AA,
-        format: "Acceptance/Beginners",
-        isClosed: true,
-      },
-      {
-        time: "12:00 PM",
-        fellowship: FELLOWSHIP_AA,
-        format: "Acceptance",
-        isClosed: true,
-      },
-      {
-        time: "4:30 PM",
-        fellowship: FELLOWSHIP_AA,
-        format: "AA Literature",
-        isClosed: true,
-      },
-      {
-        time: "7:00 PM",
-        fellowship: FELLOWSHIP_CDA,
-        format: "Friday Happy Hour",
-      },
-    ]);
+function createMeetingInfo(meeting) {
+	infoList = [meeting.format];
+	if (meeting.isInPerson && meeting.isVirtual) {
+		infoList.push("Held In Person & Virtually");
+	} else if (meeting.isInPerson) {
+		infoList.push("In Person Meeting");
+	} else if (meeting.isVirtual) {
+		infoList.push("Held Virtually");
+	} else {
+		infoList.push("Meeting Inactive");
+	}
+	
+	if (meeting.isVirtual) {
+		infoList.push("Zoom Id: " + meeting.meetingId);
+		infoList.push("Password: " + meeting.password);
+		infoList.push(`<a href="${meeting.link}">Meeting Link</a>`);
+	}
+	
+	var inner = $.map(infoList, x =>
+	`<div>
+	${x}
+	</div>
+	`);
+	
+	joined = inner.join(`
+	`);
+	
+	return `
+	<div class="flex fdc">
+	${joined}
+	</div>
+	`;
+}
 
-    let saturday = new Day("Saturday", [
-      SunshineSobrietyMeeting("Necessary for Life"),
-      {
-        time: "8:30 AM",
-        fellowship: FELLOWSHIP_AA,
-        format: "6th and 7th Steps",
-        isClosed: true,
-      },
-      {
-        time: "10:00 AM",
-        fellowship: FELLOWSHIP_AA,
-        format: "Beginners Step 123 Meeting",
-        isClosed: true,
-      },
-      {
-        time: "12:00 PM",
-        fellowship: FELLOWSHIP_ACA,
-        format: "As We Grow",
-        isClosed: true,
-      },
-      /*{ // not listed in ACA meeting list as of March 16, 2020
-        time: "2:00 PM",
-        fellowship: FELLOWSHIP_ACA,
-        format: "ACA Workbook Study (2nd & 4th Saturdays",
-        isClosed: true,
-      },*/
-      {
-        time: "7:30 PM",
-        fellowship: FELLOWSHIP_AA,
-        format: "Self Examination, Meditation, and Prayer",
-      },
-    ]);
+function isInactive(meeting) {
+	if (!meeting.isVirtual && !meeting.isInPerson) {
+		return true;
+		} else {
+		return false;
+	}
+}
 
-    let sunday = new Day("Sunday", [
-      SunshineSobrietyMeeting("Came to Believe"),
-      {
-        time: "10:30 AM",
-        fellowship: FELLOWSHIP_AA,
-        format: "Tools of Recovery",
-      },
-      {
-        time: "12:00 PM",
-        fellowship: FELLOWSHIP_AA,
-        format: "AA Literature",
-      },
-      {
-        time: "6:00 PM",
-        fellowship: FELLOWSHIP_CDA,
-        format: "Sunday Fun Bunch"
-      },
-      {
-        time: "8:00 PM",
-        fellowship: FELLOWSHIP_AA,
-        format: "Speaker Meeting",
-      },
-    ]);
+function createRowsForDay(day) {
+	rows = "";
+	$.each(day.list, function (index, meeting) {
+		let isClosed = "";
+		if (meeting.isClosed) {
+			isClosed = `(C)`;
+			} else {
+			isClosed = "(O)";
+		}
+		let isActive = "";
+		if (isInactive(meeting)) {
+			isActive = "inactive";
+		}
+		
+		rows += `
+		<tr class="${meeting.fellowship} ${day.name} ${isActive}">
+		<td>${day.name.substr(0, 3)}</td>
+		<td>${meeting.time}</td>
+		<td>${meeting.fellowship}</td>
+		<td>${createMeetingInfo(meeting)}</td>
+		<td>${isClosed}</td>
+		</tr>
+		`
+	});
+	
+	return rows;
+}
 
-    function createMeetingInfo(meeting) {
-      infoList = [meeting.format];
-      if (meeting.isInPerson && meeting.isVirtual) {
-        infoList.push("Held In Person & Virtually");
-      } else if (meeting.isInPerson) {
-        infoList.push("In Person Meeting");
-      } else if (meeting.isVirtual) {
-        infoList.push("Held Virtually");
-      } else {
-        infoList.push("Meeting Inactive");
-      }
-
-      if (meeting.isVirtual) {
-        infoList.push("Zoom Id: " + meeting.meetingId);
-        infoList.push("Password: " + meeting.password);
-        infoList.push(`<a href="${meeting.link}">Meeting Link</a>`);
-      }
-
-      var inner = $.map(infoList, x =>
-        `<div>
-   ${x}
-   </div>
-   `);
-
-      joined = inner.join(`
-   `);
-
-      return `
-  <div class="flex fdc">
-    ${joined}
-  </div>
-  `;
-    }
-
-    function isInactive(meeting) {
-      if (!meeting.isVirtual && !meeting.isInPerson) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-
-    function createRowsForDay(day) {
-      rows = "";
-      $.each(day.list, function (index, meeting) {
-        let isClosed = "";
-        if (meeting.isClosed) {
-          isClosed = `(C)`;
-        } else {
-          isClosed = "(O)";
-        }
-        let isActive = "";
-        if (isInactive(meeting)) {
-          isActive = "inactive";
-        }
-
-        rows += `
-        <tr class="${meeting.fellowship} ${day.name} ${isActive}">
-            <td>${day.name.substr(0, 3)}</td>
-            <td>${meeting.time}</td>
-            <td>${meeting.fellowship}</td>
-            <td>${createMeetingInfo(meeting)}</td>
-            <td>${isClosed}</td>
-        </tr>
-        `
-      });
-
-      return rows;
-    }
-
-    //     https://learn.jquery.com/using-jquery-core/document-ready/
-    $(document).ready(function () {
-
-      //      https://materializecss.com/dropdown.html  
-      M.AutoInit();
-      $('.sidenav').sidenav();
-
-      // the point of this is to use the "active" class to determine what needs to be displayed. the table header has two dropdowns. when a dropdown item is selected, 
-      // it is marked as active, and the text in that dropdown is compared to  the table rows. if a table row has a matching class, it gets displayed. 
-      $("ul.dropdown-content li").on("click", function () {
-        let parent = $(this).parent();
-        let children = parent.children();
-        $.each(children, function (index, child) {
-          $(child).removeClass("active");
-        });
-
-        $(this).addClass("active");
-
-        let day = $("#dd_day");
-        let fellowship = $("#dd_fellowship");
-        let meetingInfo = $("#dd_meetingInfo");
-        let table = $("#meeting-schedule").children();
-
-        let activeDay = "All";
-        let activeFellowship = "All";
-        let activeInfo = "Active";
-        $.each(day.children(), (idx, elem) => {
-          if ($(elem).hasClass("active")) {
-            activeDay = $(elem).text().trim();
-          }
-        });
-
-        $.each(fellowship.children(), (idx, elem) => {
-          if ($(elem).hasClass("active")) {
-            activeFellowship = $(elem).text().trim();
-          }
-        });
-
-        $.each(meetingInfo.children(), (idx, elem) => {
-          if ($(elem).hasClass("active")) {
-            activeInfo = $(elem).text().trim();
-          }
-        });
-
-        // show them all. makes the logic easier
-        $.each(table, (idx, elem) => {
-          $(elem).show();
-        });
-
-        $.each(table, (idx, elem) => {
-          if (activeDay != "All" && !$(elem).hasClass(activeDay)) {
-            $(elem).hide();
-          }
-
-          if (activeFellowship != "All" && !$(elem).hasClass(activeFellowship)) {
-            $(elem).hide();
-          }
-
-          if (activeInfo == "Active" && $(elem).hasClass("inactive")) {
-            $(elem).hide();
-          }
-
-        });
-      });
-
-      // create meeting schedule 
-      $("#meeting-schedule").append(createRowsForDay(monday));
-      $("#meeting-schedule").append(createRowsForDay(tuesday));
-      $("#meeting-schedule").append(createRowsForDay(wednesday));
-      $("#meeting-schedule").append(createRowsForDay(thursday));
-      $("#meeting-schedule").append(createRowsForDay(friday));
-      $("#meeting-schedule").append(createRowsForDay(saturday));
-      $("#meeting-schedule").append(createRowsForDay(sunday));
-
-      // want to apply the filters on page load. do this by triggering a cl ick. 
-      $("#dd_day li").first().trigger("click");
-    });
-  </script>
+//     https://learn.jquery.com/using-jquery-core/document-ready/
+$(document).ready(function () {
+	
+	//      https://materializecss.com/dropdown.html
+	M.AutoInit();
+	$('.sidenav').sidenav();
+	
+	// the point of this is to use the "active" class to determine what needs to be displayed. the table header has two dropdowns. when a dropdown item is selected,
+	// it is marked as active, and the text in that dropdown is compared to  the table rows. if a table row has a matching class, it gets displayed.
+	$("ul.dropdown-content li").on("click", function () {
+		let parent = $(this).parent();
+		let children = parent.children();
+		$.each(children, function (index, child) {
+			$(child).removeClass("active");
+		});
+		
+		$(this).addClass("active");
+		
+		let day = $("#dd_day");
+		let fellowship = $("#dd_fellowship");
+		let meetingInfo = $("#dd_meetingInfo");
+		let table = $("#meeting-schedule").children();
+		
+		let activeDay = "All";
+		let activeFellowship = "All";
+		let activeInfo = "Active";
+		$.each(day.children(), (idx, elem) => {
+			if ($(elem).hasClass("active")) {
+				activeDay = $(elem).text().trim();
+			}
+		});
+		
+		$.each(fellowship.children(), (idx, elem) => {
+			if ($(elem).hasClass("active")) {
+				activeFellowship = $(elem).text().trim();
+			}
+		});
+		
+		$.each(meetingInfo.children(), (idx, elem) => {
+			if ($(elem).hasClass("active")) {
+				activeInfo = $(elem).text().trim();
+			}
+		});
+		
+		// show them all. makes the logic easier
+		$.each(table, (idx, elem) => {
+			$(elem).show();
+		});
+		
+		$.each(table, (idx, elem) => {
+			if (activeDay != "All" && !$(elem).hasClass(activeDay)) {
+				$(elem).hide();
+			}
+			
+			if (activeFellowship != "All" && !$(elem).hasClass(activeFellowship)) {
+				$(elem).hide();
+			}
+			
+			if (activeInfo == "Active" && $(elem).hasClass("inactive")) {
+				$(elem).hide();
+			}
+			
+		});
+	});
+	
+	// create meeting schedule
+	$("#meeting-schedule").append(createRowsForDay(monday));
+	$("#meeting-schedule").append(createRowsForDay(tuesday));
+	$("#meeting-schedule").append(createRowsForDay(wednesday));
+	$("#meeting-schedule").append(createRowsForDay(thursday));
+	$("#meeting-schedule").append(createRowsForDay(friday));
+	$("#meeting-schedule").append(createRowsForDay(saturday));
+	$("#meeting-schedule").append(createRowsForDay(sunday));
+	
+	// want to apply the filters on page load. do this by triggering a cl ick.
+	$("#dd_day li").first().trigger("click");
+});
+</script>
 </body>
 </html>
