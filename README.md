@@ -41,3 +41,5 @@ This is a little more invloved.
 3) Define a javascript variable for the acronym. ex: 'let FELLOWSHIP_ABC = "ABC"'. This is done with the rest of them, right under "class Day"
 4) When you create the new meeting, use that variable (FELLOWSHIP_ABC). Please use a variable for this. It will reduce the chance of a typo.
 
+
+
