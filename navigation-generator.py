@@ -94,5 +94,5 @@ for f in html_files:
 	
 	# write changes back to file
 	with open(f, 'w') as current_file:
-		current_file.write(soup.prettify())
+		current_file.write(str(soup))
 	
