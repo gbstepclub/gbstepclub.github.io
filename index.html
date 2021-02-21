@@ -67,13 +67,14 @@
 <tfoot>
 <tr>
 <td>
-                  (C) indicates closed meeting: Closed meetings are only for those persons who believe they have a problem in the area that a particular fellowship addresses
-                </td>
+              (C) indicates closed meeting: Closed meetings are only for those persons who believe they have a problem
+              in the area that a particular fellowship addresses
+            </td>
 </tr>
 <tr>
 <td>
-                  (O) indicates open meeting: Open meetings are open to anyone with an interest in the particular fellowship
-                </td>
+              (O) indicates open meeting: Open meetings are open to anyone with an interest in the particular fellowship
+            </td>
 </tr>
 <tr>
 <td>Meetings with "Status unknown" may or may not be active</td>
@@ -90,7 +91,9 @@
 <table>
 <thead>
 <h5 class="center-text">Zoom Phone Numbers</h5>
-<div class="center-text">Instructions: Call any of these numbers. Then provide the meeting ID and password. More information is available here: <a href="https://support.zoom.us/hc/en-us/articles/201362663-Joining-a-Meeting-by-Phone">Join a Zoom Meeting by Phone</a></div>
+<div class="center-text">Instructions: Call any of these numbers. Then provide the meeting ID and password.
+            More information is available here: <a href="https://support.zoom.us/hc/en-us/articles/201362663-Joining-a-Meeting-by-Phone">Join a Zoom Meeting
+              by Phone</a></div>
 </thead>
 <tbody>
 <tr>
@@ -227,387 +230,386 @@
 <script type="text/javascript">
 
 
-// it is too much trouble to  manually create html tables. just define them in javascript and let jquery code for you
-class Day {
-    constructor(name, list) {
+    // it is too much trouble to  manually create html tables. just define them in javascript and let jquery code for you
+    class Day {
+      constructor(name, list) {
         this.name = name; // it is too much trouble to manually type the day each time a Meeting class is created. add it once here. 
         this.list = list;
+      }
     }
-}
 
-// the Meeting class has to many parameters that below they are created using object literal syntax. omitteed boolean fields evaluate to false
-// time: string
-// fellowship: string
-// format: string
-// isClosed: boolean
-// isVirtual: boolean
-// isInPerson: boolean
-// meetingId: string
-// password: string
-// link: string
+    // the Meeting class has to many parameters that below they are created using object literal syntax. omitteed boolean fields evaluate to false
+    // time: string
+    // fellowship: string
+    // format: string
+    // isClosed: boolean
+    // isVirtual: boolean
+    // isInPerson: boolean
+    // meetingId: string
+    // password: string
+    // link: string
 
-// warning: the fellow ship type (AA, NA, ect) must be the same here as it is in the dropdown bar in the table header. the javascript is doing string comparisons.
-// be sure to use a variable rather than re-typing "AA" or the like when initializing Day classes. That way if something is wrong you only have to check two places. 
-let FELLOWSHIP_AA = "AA";
-let FELLOWSHIP_ACA = "ACA";
-let FELLOWSHIP_AlANON = "Al-Anon";
-let FELLOWSHIP_CDA = "CDA";
-let FELLOWSHIP_DRA = "DRA";
-let FELLOWSHIP_NA = "NA";
-let FELLOWSHIP_SAA = "SAA";
+    // warning: the fellow ship type (AA, NA, ect) must be the same here as it is in the dropdown bar in the table header. the javascript is doing string comparisons.
+    // be sure to use a variable rather than re-typing "AA" or the like when initializing Day classes. That way if something is wrong you only have to check two places. 
+    let FELLOWSHIP_AA = "AA";
+    let FELLOWSHIP_ACA = "ACA";
+    let FELLOWSHIP_AlANON = "Al-Anon";
+    let FELLOWSHIP_CDA = "CDA";
+    let FELLOWSHIP_DRA = "DRA";
+    let FELLOWSHIP_NA = "NA";
+    let FELLOWSHIP_SAA = "SAA";
 
 
-let sunshineSobriety_meetingId = "919 226 699";
-let sunshineSobriety_meetingPassword = "061035";
-let sunshineSobriety_meetingLink = "https://zoom.us/j/919226699?pwd=WGI2VEpSb1VnSUtEUnF5azNFSkZ5QT09";
+    let sunshineSobriety_meetingId = "919 226 699";
+    let sunshineSobriety_meetingPassword = "061035";
+    let sunshineSobriety_meetingLink = "https://zoom.us/j/919226699?pwd=WGI2VEpSb1VnSUtEUnF5azNFSkZ5QT09";
 
-function SunshineSobrietyMeeting(meetingFormat)
-{
-  return {
-      time: "6:45 AM",
-      fellowship: FELLOWSHIP_AA,
-      format: meetingFormat,
-      isClosed: true,
-      isVirtual: true,
-      isInPerson: false,
-      meetingId: sunshineSobriety_meetingId,
-      password: sunshineSobriety_meetingPassword,
-      link: sunshineSobriety_meetingLink,
+    function SunshineSobrietyMeeting(meetingFormat) {
+      return {
+        time: "6:45 AM",
+        fellowship: FELLOWSHIP_AA,
+        format: meetingFormat,
+        isClosed: true,
+        isVirtual: true,
+        isInPerson: false,
+        meetingId: sunshineSobriety_meetingId,
+        password: sunshineSobriety_meetingPassword,
+        link: sunshineSobriety_meetingLink,
+      }
     }
-}
 
 
-let monday = new Day("Monday", [
-  SunshineSobrietyMeeting("Slogans"),
-  {
-    time: "10:00 AM",
-    fellowship: FELLOWSHIP_AA,
-    format: "As  Bill Sees It (last Mon. Sponsorhip)",
-    isClosed: true,
-  },
-  {
-    time: "12:00 PM",
-    fellowship: FELLOWSHIP_AA,
-    format: "Big Book",
-    isClosed: true,
-  },
-  {
-    time: "4:30 PM",
-    fellowship: FELLOWSHIP_AA,
-    format: "Living Sober",
-    isClosed: true,
-  },
-  {
-    time: "6:30 PM",
-    fellowship: FELLOWSHIP_DRA,
-    format: "Monday Night & We're Alright",
-    isClosed: false,
-    isInPerson: true,
-  },
-]);
+    let monday = new Day("Monday", [
+      SunshineSobrietyMeeting("Slogans"),
+      {
+        time: "10:00 AM",
+        fellowship: FELLOWSHIP_AA,
+        format: "As  Bill Sees It (last Mon. Sponsorhip)",
+        isClosed: true,
+      },
+      {
+        time: "12:00 PM",
+        fellowship: FELLOWSHIP_AA,
+        format: "Big Book",
+        isClosed: true,
+      },
+      {
+        time: "4:30 PM",
+        fellowship: FELLOWSHIP_AA,
+        format: "Living Sober",
+        isClosed: true,
+      },
+      {
+        time: "6:30 PM",
+        fellowship: FELLOWSHIP_DRA,
+        format: "Monday Night & We're Alright",
+        isClosed: false,
+        isInPerson: true,
+      },
+    ]);
 
-let tuesday = new Day("Tuesday", [
-  SunshineSobrietyMeeting("Tools of Recovery"),
-  {
-    time: "12:00 PM",
-    fellowship: FELLOWSHIP_CDA,
-    format: "Cellar Dwellers",
-  },
-  {
-    time: "4:30 PM",
-    fellowship: FELLOWSHIP_AA,
-    format: "Daily Reflections",
-    isClosed: true
-  },
-  {
-    time: "7:30 PM",
-    fellowship: FELLOWSHIP_NA, 
-    format: "A.W.O.L.",
-  },
-]);
+    let tuesday = new Day("Tuesday", [
+      SunshineSobrietyMeeting("Tools of Recovery"),
+      {
+        time: "12:00 PM",
+        fellowship: FELLOWSHIP_CDA,
+        format: "Cellar Dwellers",
+      },
+      {
+        time: "4:30 PM",
+        fellowship: FELLOWSHIP_AA,
+        format: "Daily Reflections",
+        isClosed: true
+      },
+      {
+        time: "7:30 PM",
+        fellowship: FELLOWSHIP_NA,
+        format: "A.W.O.L.",
+      },
+    ]);
 
-let wednesday = new Day("Wednesday", [
-  SunshineSobrietyMeeting("Big Book"),
-  {
-    time: "10:00 AM",
-    fellowship: FELLOWSHIP_AA,
-    format: "8th and 9th Steps (last Wed. AA Legacy)",
-    isClosed: true,
-  },
-  {
-    time: "12:00 PM",
-    fellowship: FELLOWSHIP_NA, 
-    format: "Just For Today",
-  },
-  {
-    time: "4:30 PM",
-    fellowship: FELLOWSHIP_AA,
-    format: "Experience, Strength, and Hope",
-    isClosed: true,
-  },
-  {
-    time: "7:00 PM",
-    fellowship: FELLOWSHIP_AA,
-    format: "Steps & Traditions Study Group",
-  },
-]);
+    let wednesday = new Day("Wednesday", [
+      SunshineSobrietyMeeting("Big Book"),
+      {
+        time: "10:00 AM",
+        fellowship: FELLOWSHIP_AA,
+        format: "8th and 9th Steps (last Wed. AA Legacy)",
+        isClosed: true,
+      },
+      {
+        time: "12:00 PM",
+        fellowship: FELLOWSHIP_NA,
+        format: "Just For Today",
+      },
+      {
+        time: "4:30 PM",
+        fellowship: FELLOWSHIP_AA,
+        format: "Experience, Strength, and Hope",
+        isClosed: true,
+      },
+      {
+        time: "7:00 PM",
+        fellowship: FELLOWSHIP_AA,
+        format: "Steps & Traditions Study Group",
+      },
+    ]);
 
-let thursday = new Day("Thursday", [
-  SunshineSobrietyMeeting("Steps & Traditions"),
-  {
-    time: "12:00 PM",
-    fellowship: FELLOWSHIP_NA, 
-    format: "Not High at Noon",
-  },
-  {
-    time: "4:30 PM",
-    fellowship: FELLOWSHIP_AA,
-    format: "Grapevine",
-  },
-  {
-    time: "6:30 PM",
-    fellowship: FELLOWSHIP_AlANON,
-    format: "Early Bird Serenity",
-  },
-  {
-    time: "8:00 PM",
-    fellowship: FELLOWSHIP_SAA,
-    format: "Recovery in Action",
-    isClosed: true
-  },
-]);
+    let thursday = new Day("Thursday", [
+      SunshineSobrietyMeeting("Steps & Traditions"),
+      {
+        time: "12:00 PM",
+        fellowship: FELLOWSHIP_NA,
+        format: "Not High at Noon",
+      },
+      {
+        time: "4:30 PM",
+        fellowship: FELLOWSHIP_AA,
+        format: "Grapevine",
+      },
+      {
+        time: "6:30 PM",
+        fellowship: FELLOWSHIP_AlANON,
+        format: "Early Bird Serenity",
+      },
+      {
+        time: "8:00 PM",
+        fellowship: FELLOWSHIP_SAA,
+        format: "Recovery in Action",
+        isClosed: true
+      },
+    ]);
 
-let friday = new Day("Friday", [
-  SunshineSobrietyMeeting("How It Works"),
-  {
-    time: "10:00 AM",
-    fellowship: FELLOWSHIP_AA,
-    format: "Acceptance/Beginners",
-    isClosed: true,
-  },
-  {
-    time: "12:00 PM",
-    fellowship: FELLOWSHIP_AA,
-    format: "Acceptance",
-    isClosed: true,
-  },
-  {
-    time: "4:30 PM",
-    fellowship: FELLOWSHIP_AA,
-    format: "AA Literature",
-    isClosed: true,
-  },
-  {
-    time: "7:00 PM",
-    fellowship: FELLOWSHIP_CDA,
-    format: "Friday Happy Hour",
-  },
-]);
+    let friday = new Day("Friday", [
+      SunshineSobrietyMeeting("How It Works"),
+      {
+        time: "10:00 AM",
+        fellowship: FELLOWSHIP_AA,
+        format: "Acceptance/Beginners",
+        isClosed: true,
+      },
+      {
+        time: "12:00 PM",
+        fellowship: FELLOWSHIP_AA,
+        format: "Acceptance",
+        isClosed: true,
+      },
+      {
+        time: "4:30 PM",
+        fellowship: FELLOWSHIP_AA,
+        format: "AA Literature",
+        isClosed: true,
+      },
+      {
+        time: "7:00 PM",
+        fellowship: FELLOWSHIP_CDA,
+        format: "Friday Happy Hour",
+      },
+    ]);
 
-let saturday = new Day("Saturday", [
-  SunshineSobrietyMeeting("Necessary for Life"),
-  {
-    time: "8:30 AM",
-    fellowship: FELLOWSHIP_AA,
-    format: "6th and 7th Steps",
-    isClosed: true,
-  },
-  {
-    time: "10:00 AM",
-    fellowship: FELLOWSHIP_AA,
-    format: "Beginners Step 123 Meeting",
-    isClosed: true,
-  },
-  {
-    time: "12:00 PM",
-    fellowship: FELLOWSHIP_ACA,
-    format: "As We Grow",
-    isClosed: true,
-  },
-  /*{ // not listed in ACA meeting list as of March 16, 2020
-    time: "2:00 PM",
-    fellowship: FELLOWSHIP_ACA,
-    format: "ACA Workbook Study (2nd & 4th Saturdays",
-    isClosed: true,
-  },*/
-  {
-    time: "7:30 PM",
-    fellowship: FELLOWSHIP_AA,
-    format: "Self Examination, Meditation, and Prayer",
-  },
-]);
+    let saturday = new Day("Saturday", [
+      SunshineSobrietyMeeting("Necessary for Life"),
+      {
+        time: "8:30 AM",
+        fellowship: FELLOWSHIP_AA,
+        format: "6th and 7th Steps",
+        isClosed: true,
+      },
+      {
+        time: "10:00 AM",
+        fellowship: FELLOWSHIP_AA,
+        format: "Beginners Step 123 Meeting",
+        isClosed: true,
+      },
+      {
+        time: "12:00 PM",
+        fellowship: FELLOWSHIP_ACA,
+        format: "As We Grow",
+        isClosed: true,
+      },
+      /*{ // not listed in ACA meeting list as of March 16, 2020
+        time: "2:00 PM",
+        fellowship: FELLOWSHIP_ACA,
+        format: "ACA Workbook Study (2nd & 4th Saturdays",
+        isClosed: true,
+      },*/
+      {
+        time: "7:30 PM",
+        fellowship: FELLOWSHIP_AA,
+        format: "Self Examination, Meditation, and Prayer",
+      },
+    ]);
 
-let sunday = new Day("Sunday", [
-  SunshineSobrietyMeeting("Came to Believe"),
-  {
-    time: "10:30 AM",
-    fellowship: FELLOWSHIP_AA,
-    format: "Tools of Recovery",
-  },
-  {
-    time: "12:00 PM",
-    fellowship: FELLOWSHIP_AA,
-    format: "AA Literature",
-  },
-  {
-    time: "6:00 PM",
-    fellowship: FELLOWSHIP_CDA,
-    format: "Sunday Fun Bunch"
-  },
-  {
-    time: "8:00 PM",
-    fellowship: FELLOWSHIP_AA,
-    format: "Speaker Meeting",
-  },
-]);
+    let sunday = new Day("Sunday", [
+      SunshineSobrietyMeeting("Came to Believe"),
+      {
+        time: "10:30 AM",
+        fellowship: FELLOWSHIP_AA,
+        format: "Tools of Recovery",
+      },
+      {
+        time: "12:00 PM",
+        fellowship: FELLOWSHIP_AA,
+        format: "AA Literature",
+      },
+      {
+        time: "6:00 PM",
+        fellowship: FELLOWSHIP_CDA,
+        format: "Sunday Fun Bunch"
+      },
+      {
+        time: "8:00 PM",
+        fellowship: FELLOWSHIP_AA,
+        format: "Speaker Meeting",
+      },
+    ]);
 
-function createMeetingInfo(meeting) {
-  infoList = [meeting.format];
-  if (meeting.isInPerson && meeting.isVirtual) {
-    infoList.push("Held In Person & Virtually");
-  } else if (meeting.isInPerson) {
-    infoList.push("In Person Meeting");
-  } else if (meeting.isVirtual) {
-    infoList.push("Held Virtually");
-  } else {
-    infoList.push("Meeting Inactive");
-  }
+    function createMeetingInfo(meeting) {
+      infoList = [meeting.format];
+      if (meeting.isInPerson && meeting.isVirtual) {
+        infoList.push("Held In Person & Virtually");
+      } else if (meeting.isInPerson) {
+        infoList.push("In Person Meeting");
+      } else if (meeting.isVirtual) {
+        infoList.push("Held Virtually");
+      } else {
+        infoList.push("Meeting Inactive");
+      }
 
-  if (meeting.isVirtual) {
-    infoList.push("Zoom Id: " + meeting.meetingId);
-    infoList.push("Password: " + meeting.password);
-    infoList.push(`<a href="${meeting.link}">Meeting Link</a>`);
-  }
+      if (meeting.isVirtual) {
+        infoList.push("Zoom Id: " + meeting.meetingId);
+        infoList.push("Password: " + meeting.password);
+        infoList.push(`<a href="${meeting.link}">Meeting Link</a>`);
+      }
 
-  var inner = $.map(infoList, x => 
-  `<div>
+      var inner = $.map(infoList, x =>
+        `<div>
    ${x}
    </div>
    `);
 
-   joined = inner.join(`
+      joined = inner.join(`
    `);
 
-  return `
+      return `
   <div class="flex fdc">
     ${joined}
   </div>
   `;
-}
-
-function isInactive(meeting) {
-  if (!meeting.isVirtual && !meeting.isInPerson) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function createRowsForDay(day) {
-    rows = "";
-    $.each(day.list, function(index, meeting) {
-      let isClosed = "";
-      if (meeting.isClosed) {
-        isClosed = `(C)`;
-      } else {
-        isClosed = "(O)";
-      }
-    let isActive = "";
-    if (isInactive(meeting)){
-      isActive = "inactive";
     }
 
-    rows +=  `
+    function isInactive(meeting) {
+      if (!meeting.isVirtual && !meeting.isInPerson) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function createRowsForDay(day) {
+      rows = "";
+      $.each(day.list, function (index, meeting) {
+        let isClosed = "";
+        if (meeting.isClosed) {
+          isClosed = `(C)`;
+        } else {
+          isClosed = "(O)";
+        }
+        let isActive = "";
+        if (isInactive(meeting)) {
+          isActive = "inactive";
+        }
+
+        rows += `
         <tr class="${meeting.fellowship} ${day.name} ${isActive}">
-            <td>${day.name.substr(0,3)}</td>
+            <td>${day.name.substr(0, 3)}</td>
             <td>${meeting.time}</td>
             <td>${meeting.fellowship}</td>
             <td>${createMeetingInfo(meeting)}</td>
             <td>${isClosed}</td>
         </tr>
         `
+      });
+
+      return rows;
+    }
+
+    //     https://learn.jquery.com/using-jquery-core/document-ready/
+    $(document).ready(function () {
+
+      //      https://materializecss.com/dropdown.html  
+      M.AutoInit();
+      $('.sidenav').sidenav();
+
+      // the point of this is to use the "active" class to determine what needs to be displayed. the table header has two dropdowns. when a dropdown item is selected, 
+      // it is marked as active, and the text in that dropdown is compared to  the table rows. if a table row has a matching class, it gets displayed. 
+      $("ul.dropdown-content li").on("click", function () {
+        let parent = $(this).parent();
+        let children = parent.children();
+        $.each(children, function (index, child) {
+          $(child).removeClass("active");
+        });
+
+        $(this).addClass("active");
+
+        let day = $("#dd_day");
+        let fellowship = $("#dd_fellowship");
+        let meetingInfo = $("#dd_meetingInfo");
+        let table = $("#meeting-schedule").children();
+
+        let activeDay = "All";
+        let activeFellowship = "All";
+        let activeInfo = "Active";
+        $.each(day.children(), (idx, elem) => {
+          if ($(elem).hasClass("active")) {
+            activeDay = $(elem).text().trim();
+          }
+        });
+
+        $.each(fellowship.children(), (idx, elem) => {
+          if ($(elem).hasClass("active")) {
+            activeFellowship = $(elem).text().trim();
+          }
+        });
+
+        $.each(meetingInfo.children(), (idx, elem) => {
+          if ($(elem).hasClass("active")) {
+            activeInfo = $(elem).text().trim();
+          }
+        });
+
+        // show them all. makes the logic easier
+        $.each(table, (idx, elem) => {
+          $(elem).show();
+        });
+
+        $.each(table, (idx, elem) => {
+          if (activeDay != "All" && !$(elem).hasClass(activeDay)) {
+            $(elem).hide();
+          }
+
+          if (activeFellowship != "All" && !$(elem).hasClass(activeFellowship)) {
+            $(elem).hide();
+          }
+
+          if (activeInfo == "Active" && $(elem).hasClass("inactive")) {
+            $(elem).hide();
+          }
+
+        });
+      });
+
+      // create meeting schedule 
+      $("#meeting-schedule").append(createRowsForDay(monday));
+      $("#meeting-schedule").append(createRowsForDay(tuesday));
+      $("#meeting-schedule").append(createRowsForDay(wednesday));
+      $("#meeting-schedule").append(createRowsForDay(thursday));
+      $("#meeting-schedule").append(createRowsForDay(friday));
+      $("#meeting-schedule").append(createRowsForDay(saturday));
+      $("#meeting-schedule").append(createRowsForDay(sunday));
+
+      // want to apply the filters on page load. do this by triggering a cl ick. 
+      $("#dd_day li").first().trigger("click");
     });
-
-   return rows;
-}
-
-//     https://learn.jquery.com/using-jquery-core/document-ready/
-$(document).ready(function(){
-
-  //      https://materializecss.com/dropdown.html  
-  M.AutoInit();
-  $('.sidenav').sidenav();
-  
-  // the point of this is to use the "active" class to determine what needs to be displayed. the table header has two dropdowns. when a dropdown item is selected, 
-  // it is marked as active, and the text in that dropdown is compared to  the table rows. if a table row has a matching class, it gets displayed. 
-  $("ul.dropdown-content li").on("click",function() {
-    let parent = $(this).parent();
-    let children = parent.children();
-    $.each(children, function(index, child) {
-      $(child).removeClass("active");
-    });
-
-    $(this).addClass("active");
-    
-    let day = $("#dd_day");
-    let fellowship = $("#dd_fellowship");
-    let meetingInfo = $("#dd_meetingInfo");
-    let table = $("#meeting-schedule").children();
-
-    let activeDay = "All";
-    let activeFellowship = "All";
-    let activeInfo = "Active"; 
-    $.each(day.children(), (idx, elem) => {
-      if ($(elem).hasClass("active")){
-        activeDay = $(elem).text().trim();
-      }
-    });
-
-    $.each(fellowship.children(), (idx, elem) => {
-      if ($(elem).hasClass("active")){
-        activeFellowship = $(elem).text().trim();
-      }
-    });
-
-    $.each(meetingInfo.children(), (idx, elem) => {
-      if ($(elem).hasClass("active")){
-        activeInfo = $(elem).text().trim();
-      }
-    });
-
-    // show them all. makes the logic easier
-    $.each(table, (idx, elem) => {
-      $(elem).show();
-    });
-
-    $.each(table, (idx, elem) => {
-      if (activeDay != "All" && !$(elem).hasClass(activeDay)) {
-        $(elem).hide();
-      }
-
-      if (activeFellowship != "All" && !$(elem).hasClass(activeFellowship)) {
-        $(elem).hide();
-      }
-
-      if (activeInfo == "Active" && $(elem).hasClass("inactive")) {
-        $(elem).hide();
-      }
-
-    });
-  });
-
-    // create meeting schedule 
-    $("#meeting-schedule").append(createRowsForDay(monday));
-    $("#meeting-schedule").append(createRowsForDay(tuesday));
-    $("#meeting-schedule").append(createRowsForDay(wednesday));
-    $("#meeting-schedule").append(createRowsForDay(thursday));
-    $("#meeting-schedule").append(createRowsForDay(friday));
-    $("#meeting-schedule").append(createRowsForDay(saturday));
-    $("#meeting-schedule").append(createRowsForDay(sunday));
-
-    // want to apply the filters on page load. do this by triggering a cl ick. 
-    $("#dd_day li").first().trigger("click");
-});
-    </script>
+  </script>
 </body>
 </html>
