@@ -227,7 +227,8 @@
 		<!--JavaScript at end of body for optimized loading-->
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script src="js/materialize.min.js" type="text/javascript"></script>
-		<script type="text/javascript">
+
+<script type="text/javascript">
 // it is too much trouble to  manually create html tables. just define them in javascript and let jquery code for you
 class Day {
 	constructor(name, list) {
@@ -476,12 +477,12 @@ function createMeetingInfo(meeting) {
 	if (meeting.isVirtual) {
 		infoList.push("Zoom Id: " + meeting.meetingId);
 		infoList.push("Password: " + meeting.password);
-		infoList.push(`<a href="${meeting.link}">Meeting Link</a>`);
+	infoList.push(`<a href="${meeting.link}">Meeting Link</a>`);
 	}
 	
 	var inner = $.map(infoList, x =>
 	`<div>
-	${x}
+${x}
 	</div>
 	`);
 	
@@ -490,7 +491,7 @@ function createMeetingInfo(meeting) {
 	
 	return `
 	<div class="flex fdc">
-	${joined}
+${joined}
 	</div>
 	`;
 }
@@ -498,7 +499,7 @@ function createMeetingInfo(meeting) {
 function isInactive(meeting) {
 	if (!meeting.isVirtual && !meeting.isInPerson) {
 		return true;
-		} else {
+	} else {
 		return false;
 	}
 }
@@ -509,7 +510,7 @@ function createRowsForDay(day) {
 		let isClosed = "";
 		if (meeting.isClosed) {
 			isClosed = `(C)`;
-			} else {
+		} else {
 			isClosed = "(O)";
 		}
 		let isActive = "";
@@ -518,12 +519,12 @@ function createRowsForDay(day) {
 		}
 		
 		rows += `
-		<tr class="${meeting.fellowship} ${day.name} ${isActive}">
-		<td>${day.name.substr(0, 3)}</td>
-		<td>${meeting.time}</td>
-		<td>${meeting.fellowship}</td>
-		<td>${createMeetingInfo(meeting)}</td>
-		<td>${isClosed}</td>
+	<tr class="${meeting.fellowship} ${day.name} ${isActive}">
+	<td>${day.name.substr(0, 3)}</td>
+	<td>${meeting.time}</td>
+	<td>${meeting.fellowship}</td>
+	<td>${createMeetingInfo(meeting)}</td>
+	<td>${isClosed}</td>
 		</tr>
 		`
 	});
@@ -608,6 +609,6 @@ $(document).ready(function () {
 	// want to apply the filters on page load. do this by triggering a cl ick.
 	$("#dd_day li").first().trigger("click");
 });
-</script>
-</body>
+		</script>
+	</body>
 </html>

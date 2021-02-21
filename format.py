@@ -1,6 +1,6 @@
 
+import re
 from enum import Enum
-from functools import reduce
 
 class ParseState(Enum):
 	ERROR = 0
@@ -79,20 +79,18 @@ def javascript(_html):
 	after = []
 	lines = [line for line in _html.splitlines()]
 	for line in lines:
-		if line.strip() == r'<script type="text/javascript">':
+		stripped = line.strip()
+		if re.match('<script type="text/javascript">', stripped) != None:
 			is_formatting = True
-			before.append(line)
+			before[-1] += '\n'
 			is_before = False
-			continue
-		if is_formatting and line.strip == r'</script>':
+		if is_formatting and stripped == r'</script>':
 			is_formatting = False
-			after.append(line.strip())
-			continue
 		
 		if is_before:
 			before.append(line)
 		elif is_formatting:
-			to_format.append(line.strip())
+			to_format.append(stripped)
 		else:
 			after.append(line)
 	
@@ -102,6 +100,7 @@ def javascript(_html):
 	num_tabs = 0
 	
 	for line in to_format:
+		prev_closed = closed_tags
 		for char in line:
 			if char == '{':
 				open_tags += 1
@@ -114,10 +113,12 @@ def javascript(_html):
 		tabs_to_use = num_tabs # decrease indent on the line of the closing tab
 		if num_tabs > prev_tabs: # don't indent extra on the line of the opening tab
 				tabs_to_use = prev_tabs
-		if line.strip() == '} else {':
+		elif num_tabs == prev_tabs and closed_tags > prev_closed:
 			tabs_to_use -= 1
+			
 		formatted_lines.append(('\t' * tabs_to_use) + line)
 	
-	
-	return reduce(lambda x, y: x + y, map(lambda x: '\n'.join(x), [before, formatted_lines, after]))
+	list_of_strings = map(lambda x: '\n'.join(x), [before, formatted_lines, after])
+	return '\n'.join(list_of_strings)
+
 	

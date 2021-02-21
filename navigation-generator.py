@@ -100,3 +100,4 @@ for f in html_files:
 		even_better = format.javascript(better_soup)
 		current_file.write(even_better)
 	
+	
