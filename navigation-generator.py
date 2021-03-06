@@ -6,14 +6,18 @@ import format
 # the main bar has 3 items as of now, the third one being "More", defined in drop_down
 main_bar = { \
 	'index.html': 'Meetings', \
-	'newcomers.html': 'Newcomers', \
-	}
+	'resources.html': 'Resources', \
+	} 
 
 # contents of "More"
 drop_down = { \
-	'resources.html': 'Resources', \
-	'donate.html' : 'Donate', \
 	'about.html' : 'About', \
+	'boardOfDirectors.html' : 'Board of Directors', \
+	'contact.html' : 'Contact Us', \
+	'donate.html' : 'Donate', \
+	'finances.html' : 'Club Finances', \
+	'join.html' : 'Join the Club', \
+	'fellowships.html': 'Fellowships', \
 	}
 
 # everything is listed in the sidenav, used for mobile browsers 
