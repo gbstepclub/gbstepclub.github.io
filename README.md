@@ -32,7 +32,7 @@ The script includes an auto-formatter which cannot be avoided. The code generati
 Make a copy of `template.html` and rename the new file. Don't worry about filling in anything related to the navigation; let `navigation-generator.py` handle that for you. Simply update the script to include the new web page (process described above). The template file includes everything needed to make the sidenav and dropdowns work. You should be adding html inside of the `<main>` tag.  
 
 ### Formatting pages
-The file, css/custom.css has css classes to help you properly format the page. It also contains css that is only used by one page (anything that starts with a # is page-specific). 
+Wrap any text in `<div>` tags. Then add one, maybe two classes and you should be done. The helper classes are defined in `css/custom.css`.
 
 There are three types of helper classes:
 1. centering titles/headers - use the class `center-text`
