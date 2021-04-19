@@ -1,7 +1,7 @@
 # gbstepclub.github.io Code Maintenance Guide
 
 ### Updating the navigation
-Modify the script navigation-generator.py and execute the following command: 'python3 navigation-generator.py
+Modify the script `navigation-generator.py` and execute the following command: `python3 navigation-generator.py`
 
 Explanation:
 There are three navigation elements - the nav bar, the dropdown on the nav bar, and the side nav. Modifying all of these for every page every time a page is created is not ideal. So there's a script to do this automatically. It's called 'navigation-generator.py'.
@@ -39,7 +39,7 @@ There are three types of helper classes:
 2. centering and formatting blocks of text - use `my-text-section`
 3. Flexbox
 
-####flexbox background information
+#### flexbox background information
 Page layouts are accomplished using css flexbox. for more information see the following: https://css-tricks.com/snippets/css/a-guide-to-flexbox/. Flexbox is used to make all the child elements inside of a `<div>` (or any other tag) align in a row or a column. Flexbox lets you place the items on the left, right, or center of the alignment axis, and control  the spacing between items. This is preferable to using a grid or floats, as it is simpler. 
 
 ### Changing the meeting list
@@ -56,7 +56,7 @@ This is a little more invloved.
 1. look for `id="dd_fellowship"` and add the corresponding acronym to the list. 
 2. Add the Acronym to the legend `(id="legend-modal")`
 3. Define a javascript variable for the acronym. ex: `let FELLOWSHIP_ABC = "ABC";`. This is done with the rest of them, right under `class Day`
-4. When you create the new meeting, use that variable (FELLOWSHIP_ABC). Please use a variable for this. It will reduce the chance of a typo.
+4. When you create the new meeting, use that variable (eg. FELLOWSHIP_ABC). Please use a variable for this. It will reduce the chance of a typo.
 
 
 
